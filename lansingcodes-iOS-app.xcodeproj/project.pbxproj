@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,13 @@
 		B372B85E2355168C006D430A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B372B85D2355168C006D430A /* Assets.xcassets */; };
 		B372B8612355168C006D430A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B372B8602355168C006D430A /* Preview Assets.xcassets */; };
 		B372B8642355168C006D430A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B372B8622355168C006D430A /* LaunchScreen.storyboard */; };
+		B3D7A016235550690069AB03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3D7A015235550690069AB03 /* GoogleService-Info.plist */; };
+		B6D408223E87A3219097F1F1 /* Pods_lansingcodes_iOS_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lansingcodes_iOS_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2FD4858CC0ADE8DC675D377 /* Pods-lansingcodes-iOS-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.debug.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.debug.xcconfig"; sourceTree = "<group>"; };
 		B372B85423551689006D430A /* lansingcodes-iOS-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lansingcodes-iOS-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B372B85723551689006D430A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B372B85923551689006D430A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		B372B8602355168C006D430A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B372B8632355168C006D430A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B372B8652355168C006D430A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3D7A015235550690069AB03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D112AB34B77665CE178C403A /* Pods-lansingcodes-iOS-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.release.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D408223E87A3219097F1F1 /* Pods_lansingcodes_iOS_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				B372B85623551689006D430A /* lansingcodes-iOS-app */,
 				B372B85523551689006D430A /* Products */,
+				EC96ECC50A47BC9634A7DF32 /* Pods */,
+				C4C1494478CB1B384D5A9719 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +70,7 @@
 				B372B85B23551689006D430A /* ContentView.swift */,
 				B372B85D2355168C006D430A /* Assets.xcassets */,
 				B372B8622355168C006D430A /* LaunchScreen.storyboard */,
+				B3D7A015235550690069AB03 /* GoogleService-Info.plist */,
 				B372B8652355168C006D430A /* Info.plist */,
 				B372B85F2355168C006D430A /* Preview Content */,
 			);
@@ -75,6 +85,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C4C1494478CB1B384D5A9719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC96ECC50A47BC9634A7DF32 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2FD4858CC0ADE8DC675D377 /* Pods-lansingcodes-iOS-app.debug.xcconfig */,
+				D112AB34B77665CE178C403A /* Pods-lansingcodes-iOS-app.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B372B8682355168C006D430A /* Build configuration list for PBXNativeTarget "lansingcodes-iOS-app" */;
 			buildPhases = (
+				5649E97677305AB324ADDF2C /* [CP] Check Pods Manifest.lock */,
 				B372B85023551689006D430A /* Sources */,
 				B372B85123551689006D430A /* Frameworks */,
 				B372B85223551689006D430A /* Resources */,
+				FB31767BD291CDEAA8B52B2E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,10 +165,53 @@
 				B372B8642355168C006D430A /* LaunchScreen.storyboard in Resources */,
 				B372B8612355168C006D430A /* Preview Assets.xcassets in Resources */,
 				B372B85E2355168C006D430A /* Assets.xcassets in Resources */,
+				B3D7A016235550690069AB03 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5649E97677305AB324ADDF2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-lansingcodes-iOS-app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB31767BD291CDEAA8B52B2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B372B85023551689006D430A /* Sources */ = {
@@ -282,6 +354,7 @@
 		};
 		B372B8692355168C006D430A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2FD4858CC0ADE8DC675D377 /* Pods-lansingcodes-iOS-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +375,7 @@
 		};
 		B372B86A2355168C006D430A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D112AB34B77665CE178C403A /* Pods-lansingcodes-iOS-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

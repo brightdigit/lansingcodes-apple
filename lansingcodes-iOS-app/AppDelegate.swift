@@ -26,37 +26,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-
-    FirebaseApp.configure()
-
-    let db = Firestore.firestore()
-    db.collection("groups").getDocuments() { (querySnapshot, err) in
-        if let err = err {
-            print("Error getting documents: \(err)")
-        } else {
-            for document in querySnapshot!.documents {
-                print("\(document.documentID) => \(document.data())")
-            }
-        }
-    }
-    db.collection("events").getDocuments() { (querySnapshot, err) in
-           if let err = err {
-               print("Error getting documents: \(err)")
-           } else {
-               for document in querySnapshot!.documents {
-                   print("\(document.documentID) => \(document.data())")
-               }
-           }
-       }
-    db.collection("sponsors").getDocuments() { (querySnapshot, err) in
-        if let err = err {
-            print("Error getting documents: \(err)")
-        } else {
-            for document in querySnapshot!.documents {
-                print("\(document.documentID) => \(document.data())")
-            }
-        }
-    }
+//
+//    
+//    db.collection("groups").getDocuments() { (querySnapshot, err) in
+//        if let err = err {
+//            print("Error getting documents: \(err)")
+//        } else {
+//            for document in querySnapshot!.documents {
+//              
+//                print("\(document.documentID) => \(document.data())")
+//            }
+//        }
+//    }
+//    db.collection("events").getDocuments() { (querySnapshot, err) in
+//           if let err = err {
+//               print("Error getting documents: \(err)")
+//           } else {
+//               for document in querySnapshot!.documents {
+//                   print("\(document.documentID) => \(document.data())")
+//               }
+//           }
+//       }
+//    db.collection("sponsors").getDocuments() { (querySnapshot, err) in
+//        if let err = err {
+//            print("Error getting documents: \(err)")
+//        } else {
+//            for document in querySnapshot!.documents {
+//                print("\(document.documentID) => \(document.data())")
+//            }
+//        }
+//    }
     return true
   }
 

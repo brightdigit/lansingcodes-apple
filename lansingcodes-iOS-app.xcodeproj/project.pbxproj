@@ -14,6 +14,7 @@
 		B372B8612355168C006D430A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B372B8602355168C006D430A /* Preview Assets.xcassets */; };
 		B372B8642355168C006D430A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B372B8622355168C006D430A /* LaunchScreen.storyboard */; };
 		B3D7A016235550690069AB03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3D7A015235550690069AB03 /* GoogleService-Info.plist */; };
+		B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F60EC3235691C1001A1148 /* Dataset.swift */; };
 		B6D408223E87A3219097F1F1 /* Pods_lansingcodes_iOS_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		B372B8632355168C006D430A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B372B8652355168C006D430A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3D7A015235550690069AB03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3F60EC3235691C1001A1148 /* Dataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
 		D112AB34B77665CE178C403A /* Pods-lansingcodes-iOS-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.release.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +75,7 @@
 				B3D7A015235550690069AB03 /* GoogleService-Info.plist */,
 				B372B8652355168C006D430A /* Info.plist */,
 				B372B85F2355168C006D430A /* Preview Content */,
+				B3F60EC3235691C1001A1148 /* Dataset.swift */,
 			);
 			path = "lansingcodes-iOS-app";
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			files = (
 				B372B85823551689006D430A /* AppDelegate.swift in Sources */,
 				B372B85A23551689006D430A /* SceneDelegate.swift in Sources */,
+				B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */,
 				B372B85C23551689006D430A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,15 @@
 import Combine
 import Firebase
 
+struct TryConvert {
+  public static func fromStringOf<T>(_ object: Any, byConverting convert: (String) -> T?) -> T? {
+    if let string = object as? String {
+      return convert(string)
+    }
+    return nil
+  }
+}
+
 struct NoDataError : Error {
   
 }
@@ -34,9 +43,16 @@ extension Result {
     }
   }
 }
+struct LCIcon {
+  let set : String
+  let name : String
+}
 struct LCGroup : Identifiable {
   let id: String
   let name : String
+  let url : URL
+  let description : String
+  let icon : LCIcon?
   /*
    "name": Web, "schedule": 2nd Wednesday, "description": Share your latest project, talk about tools you're using, network, trade advice, or just chat about the web., "url": https://www.meetup.com/lansingweb/, "slug": lansingweb, "iconName": html5, "iconSet": fab
    */
@@ -45,7 +61,21 @@ struct LCGroup : Identifiable {
     guard let name = document.data()["name"] as? String else {
       throw MissingDocumentFieldError(fieldName: "name")
     }
+    guard let url = TryConvert.fromStringOf(document.data()["url"], byConverting: { URL(string: $0)})  else {
+      throw MissingDocumentFieldError(fieldName: "url")
+    }
+    guard let description = document.data()["description"] as? String else {
+      throw MissingDocumentFieldError(fieldName: "description")
+    }
     self.name = name
+    self.url = url
+    self.description = description
+    if let iconSet = document.data()["iconSet"] as? String, let iconName = document.data()["iconName"] as? String {
+
+    self.icon = LCIcon(set: iconSet, name: iconName)
+    } else {
+      self.icon = nil
+    }
   }
 }
 class Dataset : ObservableObject {
@@ -69,6 +99,7 @@ class Dataset : ObservableObject {
         self.groups = groups
       }
     }
+    
     db.collection("groups").addSnapshotListener(includeMetadataChanges: true) { (snapshot, error) in
       let result = Result(snapshot, withError: error, defaultError: NoDataError())
       let groups = result.flatMap { (snapshot) in

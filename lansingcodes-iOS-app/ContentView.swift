@@ -31,7 +31,11 @@ struct ContentView: View {
     let result = dataset.groups.flatMap({ try? $0.get() }) ?? [LCGroup]()
     
     return List(result) { (group) in
-          Text(group.name)
+      HStack{
+        Text(group.name)
+        Text(group.icon?.set ?? "")
+        Text(group.icon?.name ?? "")
+      }
     }
      
   }

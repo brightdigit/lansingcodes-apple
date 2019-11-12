@@ -8,6 +8,14 @@
 
 import SwiftUI
 
+struct MockDatastore : Datastore {
+  let groups : [LCGroup]
+  func group(_ closure: @escaping (Result<[LCGroup], Error>) -> Void) {
+    closure(.success(self.groups))
+  }
+  
+  
+}
 struct ContentView: View {
   @EnvironmentObject var dataset : Dataset
   var body: some View {
@@ -40,7 +48,10 @@ struct ContentView: View {
   }
   
   func iconFor(_ group: LCGroup) -> some View {
-    return group.icon.map { (icon) -> Image in
+    return group.icon.map { (icon) -> Image? in
+      guard icon.set != "mfizz" else {
+        return nil
+      }
       return Image(icon.fullName)
     }
   }
@@ -53,7 +64,9 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
+    let groups = [LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: LCIcon(set: "fab", name: "coffee"))]
+    let data = MockDatastore(groups: groups)
     
-    ContentView()
+    return ContentView().environmentObject(Dataset(db: data))
   }
 }

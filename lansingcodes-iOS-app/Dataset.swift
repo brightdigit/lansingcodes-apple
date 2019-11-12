@@ -60,6 +60,17 @@ struct LCGroup : Identifiable {
   /*
    "name": Web, "schedule": 2nd Wednesday, "description": Share your latest project, talk about tools you're using, network, trade advice, or just chat about the web., "url": https://www.meetup.com/lansingweb/, "slug": lansingweb, "iconName": html5, "iconSet": fab
    */
+  init (id: String,
+name : String,
+url : URL,
+description : String,
+icon : LCIcon? = nil) {
+    self.id = id
+    self.name = name
+    self.url = url
+    self.description = description
+    self.icon = icon
+  }
   init (document: QueryDocumentSnapshot) throws {
     self.id = document.documentID
     guard let name = document.data()["name"] as? String else {
@@ -82,41 +93,54 @@ struct LCGroup : Identifiable {
     }
   }
 }
+
+protocol Datastore {
+  func group(_ closure: @escaping (Result<[LCGroup], Error>) -> Void)
+}
+
+extension Firestore : Datastore {
+  func group(_ closure: @escaping (Result<[LCGroup], Error>) -> Void) {
+        self.collection("groups").getDocuments { (snapshot, error) in
+          let result = Result(snapshot, withError: error, defaultError: NoDataError())
+          let groups = result.flatMap { (snapshot) in
+            return Result {
+              try snapshot.documents.map{
+                try LCGroup(document: $0)
+              }
+            }
+          }
+          closure(groups)
+        }
+    
+        self.collection("groups").addSnapshotListener(includeMetadataChanges: true) { (snapshot, error) in
+          let result = Result(snapshot, withError: error, defaultError: NoDataError())
+          let groups = result.flatMap { (snapshot) in
+            return Result {
+              try snapshot.documents.map{
+                try LCGroup(document: $0)
+              }
+            }
+          }
+          closure(groups)
+        }
+  }
+  
+  
+}
 class Dataset : ObservableObject {
-  let db : Firestore
+  let db : Datastore
   @Published var groups : Result<[LCGroup], Error>?
   
-  init (db: Firestore) {
+  init (db: Datastore) {
     self.db = db
     
-    db.collection("groups").getDocuments { (snapshot, error) in
-      let result = Result(snapshot, withError: error, defaultError: NoDataError())
-      let groups = result.flatMap { (snapshot) in
-        return Result {
-          try snapshot.documents.map{
-            try LCGroup(document: $0)
-          }
-        }
-      }
+    db.group { (groups) in
+      
       DispatchQueue.main.async {
         debugPrint(groups)
         self.groups = groups
       }
     }
-    
-    db.collection("groups").addSnapshotListener(includeMetadataChanges: true) { (snapshot, error) in
-      let result = Result(snapshot, withError: error, defaultError: NoDataError())
-      let groups = result.flatMap { (snapshot) in
-        return Result {
-          try snapshot.documents.map{
-            try LCGroup(document: $0)
-          }
-        }
-      }
-      DispatchQueue.main.async {
-        debugPrint(groups)
-        self.groups = groups
-      }
-    }
+
   }
 }

@@ -46,6 +46,10 @@ extension Result {
 struct LCIcon {
   let set : String
   let name : String
+  
+  var fullName : String {
+    return [set,name].joined(separator: ".")
+  }
 }
 struct LCGroup : Identifiable {
   let id: String

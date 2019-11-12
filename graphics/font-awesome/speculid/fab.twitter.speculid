@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fab.twitter.imageset",
+  "source" : "../svgs/brands/twitter.svg",
+  "geometry" : "32"
+}

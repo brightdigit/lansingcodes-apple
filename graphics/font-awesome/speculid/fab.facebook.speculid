@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fab.facebook.imageset",
+  "source" : "../svgs/brands/facebook.svg",
+  "geometry" : "32"
+}

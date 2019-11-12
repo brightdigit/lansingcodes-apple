@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fab.wordpress-simple.imageset",
+  "source" : "../svgs/brands/wordpress-simple.svg",
+  "geometry" : "32"
+}

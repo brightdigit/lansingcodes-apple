@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.external-link-alt.imageset",
+  "source" : "../svgs/solid/external-link-alt.svg",
+  "geometry" : "32"
+}

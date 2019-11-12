@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.chart-pie.imageset",
+  "source" : "../svgs/solid/chart-pie.svg",
+  "geometry" : "32"
+}

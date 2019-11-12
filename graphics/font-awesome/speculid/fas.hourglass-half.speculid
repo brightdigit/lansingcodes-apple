@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.hourglass-half.imageset",
+  "source" : "../svgs/solid/hourglass-half.svg",
+  "geometry" : "32"
+}

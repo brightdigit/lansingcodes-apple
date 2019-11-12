@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.envelope.imageset",
+  "source" : "../svgs/solid/envelope.svg",
+  "geometry" : "32"
+}

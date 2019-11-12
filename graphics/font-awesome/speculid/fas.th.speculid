@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.th.imageset",
+  "source" : "../svgs/solid/th.svg",
+  "geometry" : "32"
+}

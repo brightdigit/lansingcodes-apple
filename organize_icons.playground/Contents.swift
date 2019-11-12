@@ -1,10 +1,10 @@
 import Cocoa
 
 let url = URL(string: "https://raw.githubusercontent.com/lansingcodes/www/master/plugins/font-awesome.js")!
-let graphicsPath = URL(fileURLWithPath: "/Users/leo/Documents/Projects/lansingcodes-iOS-app/graphics", isDirectory: true)
+let graphicsPath = URL(fileURLWithPath: "/Users/leo/Documents/Projects/lansingcodes-iOS-app/graphics/font-awesome", isDirectory: true)
 let svgPath = graphicsPath.appendingPathComponent("svgs")
 let speculidPath = graphicsPath.appendingPathComponent("speculid")
-let svgDirectoryUrl = URL(fileURLWithPath: svgPath, isDirectory: true)
+
 let imageSetPath = URL(fileURLWithPath: "/Users/leo/Documents/Projects/lansingcodes-iOS-app/lansingcodes-iOS-app/Image.imageset", isDirectory: true)
 let destinationFolder = URL(fileURLWithPath: "/Users/leo/Documents/Projects/lansingcodes-iOS-app/lansingcodes-iOS-app/Assets.xcassets/Group Icons", isDirectory: true)
 
@@ -48,7 +48,7 @@ while let line = text.popLast() {
     if name.count > 1 {
     if let faName = name[1].first {
       let notLetter = faName.first(where: {
-        !$0.isLetter
+        !$0.isLetter && !$0.isNumber
       })
       if notLetter == nil {
         
@@ -60,25 +60,43 @@ while let line = text.popLast() {
 }
 
 let filePairs : [(key : String, value: [String : URL])] = groups.map { (args)  in
-  let setName = "fa" + String(args.key[args.key.startIndex])
+  
   let iconNames = args.value.reduce([String : URL]()) { (dictionary, key) -> [String : URL] in
     var dictionary = dictionary
-    dictionary[key] = svgDirectoryUrl.appendingPathComponent(args.key).appendingPathComponent(key).appendingPathExtension("svg")
+    
+    dictionary[key] = svgPath.appendingPathComponent(args.key).appendingPathComponent(key).appendingPathExtension("svg")
     return dictionary
   }
-  return (key : setName, value : iconNames)
+  return (key : args.key, value : iconNames)
 }
 
 let files = [String : [String : URL]].init(uniqueKeysWithValues: filePairs)
 
 if FileManager.default.fileExists(atPath: destinationFolder.path) {
-  FileManager.default.removeItem(at: destinationFolder)
+  try! FileManager.default.removeItem(at: destinationFolder)
   
 }
-FileManager.default.createDirectory(at: destinationFolder, withIntermediateDirectories: true, attributes: nil)
+
+if FileManager.default.fileExists(atPath: speculidPath.path) {
+  try! FileManager.default.removeItem(at: speculidPath)
+  
+}
+let speculidContents = """
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/%@.imageset",
+  "source" : "../svgs/%@/%@.svg",
+  "geometry" : "32"
+}
+"""
+try! FileManager.default.createDirectory(at: destinationFolder, withIntermediateDirectories: true, attributes: nil)
+try! FileManager.default.createDirectory(at: speculidPath, withIntermediateDirectories: true, attributes: nil)
 for (group, icons) in files {
   for (name, url) in icons {
-    try! FileManager.default.copyItem(at: imageSetPath, to: destinationFolder.appendingPathComponent([group,name].joined(separator: ".")).appendingPathExtension("imageset"))
+    let setName = "fa" + String(group[group.startIndex])
+    let fullName = [setName,name].joined(separator: ".")
+    try! FileManager.default.copyItem(at: imageSetPath, to: destinationFolder.appendingPathComponent(fullName).appendingPathExtension("imageset"))
+    let speculidJSON = String(format: speculidContents, fullName,group,name)
+    try! speculidJSON.write(to: speculidPath.appendingPathComponent(fullName).appendingPathExtension("speculid"), atomically: true, encoding: .utf8)
   }
 }
 let contentsJSON = """
@@ -89,4 +107,4 @@ let contentsJSON = """
   }
 }
 """
-contentsJSON.write(to: destinationFolder.appendingPathComponent("Contents").appendingPathExtension("json"), atomically: true, encoding: .utf8)
+try! contentsJSON.write(to: destinationFolder.appendingPathComponent("Contents").appendingPathExtension("json"), atomically: true, encoding: .utf8)

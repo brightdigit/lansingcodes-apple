@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.moon.imageset",
+  "source" : "../svgs/solid/moon.svg",
+  "geometry" : "32"
+}

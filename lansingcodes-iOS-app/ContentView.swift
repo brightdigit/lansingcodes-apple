@@ -32,12 +32,17 @@ struct ContentView: View {
     
     return List(result) { (group) in
       HStack{
+        self.iconFor(group)
         Text(group.name)
-        Text(group.icon?.set ?? "")
-        Text(group.icon?.name ?? "")
       }
     }
      
+  }
+  
+  func iconFor(_ group: LCGroup) -> some View {
+    return group.icon.map { (icon) -> Image in
+      return Image(icon.fullName)
+    }
   }
   
   var error : some View {

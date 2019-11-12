@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.hand-holding-heart.imageset",
+  "source" : "../svgs/solid/hand-holding-heart.svg",
+  "geometry" : "32"
+}

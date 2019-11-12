@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.unlock-alt.imageset",
+  "source" : "../svgs/solid/unlock-alt.svg",
+  "geometry" : "32"
+}

@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/far.thumbs-up.imageset",
+  "source" : "../svgs/regular/thumbs-up.svg",
+  "geometry" : "32"
+}

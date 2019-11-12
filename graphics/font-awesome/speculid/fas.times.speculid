@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.times.imageset",
+  "source" : "../svgs/solid/times.svg",
+  "geometry" : "32"
+}

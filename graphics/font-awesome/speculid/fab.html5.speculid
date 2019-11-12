@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fab.html5.imageset",
+  "source" : "../svgs/brands/html5.svg",
+  "geometry" : "32"
+}

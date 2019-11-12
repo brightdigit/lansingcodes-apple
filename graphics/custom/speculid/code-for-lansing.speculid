@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/lansing-codes.icon-code-for-lansing.imageset",
+  "source" : "../svgs/lansing-codes.icon-code-for-lansing.svg",
+  "geometry" : "32"
+}

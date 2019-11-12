@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/far.handshake.imageset",
+  "source" : "../svgs/regular/handshake.svg",
+  "geometry" : "32"
+}

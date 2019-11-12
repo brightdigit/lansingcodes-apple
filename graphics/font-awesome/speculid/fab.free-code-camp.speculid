@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fab.free-code-camp.imageset",
+  "source" : "../svgs/brands/free-code-camp.svg",
+  "geometry" : "32"
+}

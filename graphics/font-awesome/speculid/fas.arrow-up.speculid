@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.arrow-up.imageset",
+  "source" : "../svgs/solid/arrow-up.svg",
+  "geometry" : "32"
+}

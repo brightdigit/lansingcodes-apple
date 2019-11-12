@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fas.minus.imageset",
+  "source" : "../svgs/solid/minus.svg",
+  "geometry" : "32"
+}

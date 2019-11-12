@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/far.calendar-alt.imageset",
+  "source" : "../svgs/regular/calendar-alt.svg",
+  "geometry" : "32"
+}

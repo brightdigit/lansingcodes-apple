@@ -48,6 +48,7 @@ struct ContentView: View {
   }
   
   func iconFor(_ group: LCGroup) -> some View {
+    ViewBuilder.buildEither(first: <#T##View#>)
     return group.icon.map { (icon) -> Image? in
       guard icon.set != "mfizz" else {
         return nil

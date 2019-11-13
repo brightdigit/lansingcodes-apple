@@ -39,23 +39,11 @@ struct ContentView: View {
     let result = dataset.groups.flatMap({ try? $0.get() }) ?? [LCGroup]()
     
     return List(result) { (group) in
-      HStack{
-        self.iconFor(group)
-        Text(group.name)
-      }
+      GroupRowView(group: group)
     }
      
   }
   
-  func iconFor(_ group: LCGroup) -> some View {
-    ViewBuilder.buildEither(first: <#T##View#>)
-    return group.icon.map { (icon) -> Image? in
-      guard icon.set != "mfizz" else {
-        return nil
-      }
-      return Image(icon.fullName)
-    }
-  }
   
   var error : some View {
       Text(dataset.groups?.error?.localizedDescription ?? "")
@@ -65,7 +53,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    let groups = [LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: LCIcon(set: "fab", name: "coffee"))]
+    let groups = [LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: LCIcon(set: "fas", name: "coffee"))]
     let data = MockDatastore(groups: groups)
     
     return ContentView().environmentObject(Dataset(db: data))

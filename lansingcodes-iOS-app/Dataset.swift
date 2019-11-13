@@ -88,6 +88,7 @@ icon : LCIcon? = nil) {
     if let iconSet = document.data()["iconSet"] as? String, let iconName = document.data()["iconName"] as? String {
 
     self.icon = LCIcon(set: iconSet, name: iconName)
+      print(self.icon)
     } else {
       self.icon = nil
     }
@@ -127,20 +128,41 @@ extension Firestore : Datastore {
   
   
 }
+
+typealias DatasetCallback = (()->Void)->Void
+
 class Dataset : ObservableObject {
   let db : Datastore
+  let queue : DispatchQueue?
   @Published var groups : Result<[LCGroup], Error>?
   
-  init (db: Datastore) {
+  
+  init (db: Datastore, queue: DispatchQueue? = nil) {
     self.db = db
-    
+    self.queue = queue
     db.group { (groups) in
-      
-      DispatchQueue.main.async {
-        debugPrint(groups)
+      if let queue = queue {
+        queue.async {
+          self.groups = groups
+        }
+      } else {
         self.groups = groups
       }
+//      callback{
+//        self.groups = groups
+//      }
+//      DispatchQueue.main.async {
+//        debugPrint(groups)
+//        self.groups = groups
+//      }
     }
+  
 
   }
+  
+//  convenience init(db: Datastore, queue: DispatchQueue? = nil) {
+//    let queue = queue ?? DispatchQueue.main
+//  
+//    
+//  }
 }

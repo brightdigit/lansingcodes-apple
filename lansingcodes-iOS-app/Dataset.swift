@@ -43,14 +43,18 @@ extension Result {
     }
   }
 }
-struct LCIcon {
-  let set : String
-  let name : String
-  
-  var fullName : String {
-    return [set,name].joined(separator: ".")
-  }
+enum LCIcon {
+  case image(String)
+  case text(String)
 }
+//struct ObsoleteLCIcon {
+//  let set : String
+//  let name : String
+//
+//  var fullName : String {
+//    return [set,name].joined(separator: ".")
+//  }
+//}
 struct LCGroup : Identifiable {
   let id: String
   let name : String
@@ -87,8 +91,9 @@ icon : LCIcon? = nil) {
     self.description = description
     if let iconSet = document.data()["iconSet"] as? String, let iconName = document.data()["iconName"] as? String {
 
-    self.icon = LCIcon(set: iconSet, name: iconName)
-      print(self.icon)
+      self.icon = .image([iconSet,iconName].joined(separator: "."))
+    } else if let iconText = document.data()["iconText"] as? String {
+      self.icon = .text(iconText)
     } else {
       self.icon = nil
     }

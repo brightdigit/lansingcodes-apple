@@ -18,18 +18,51 @@ struct GroupRowView: View {
   }
   
   var icon : some View {
-    
-    return group.icon.map { (icon) -> Image? in
-      guard icon.set != "mfizz" else {
+
+    ZStack{
+      iconImage
+      iconText
+    }
+  }
+  
+  var iconImage : some View {
+    return self.group.icon.flatMap { (icon) in
+      guard case let .image(name) = icon else {
         return nil
       }
-      return Image(icon.fullName)
+      return name
+    }.map{
+      Image($0)
+    }
+  }
+  
+  
+  
+  var iconText : some View {
+    return self.group.icon.flatMap { (icon) -> String? in
+      guard case let .text(string) = icon else {
+        return nil
+      }
+      return string
+    }.map{
+      Text($0).fontWeight(.bold)
     }
   }
 }
 
 struct GroupRowView_Previews: PreviewProvider {
+  static func row(forGroup group: LCGroup) -> some View {
+    
+    GroupRowView(group: group).previewLayout(PreviewLayout.fixed(width: 300, height: 50))
+  }
   static var previews: some View {
-    GroupRowView(group: LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: LCIcon(set: "mfizz", name: "coffee")))
+    ForEach([
+      LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: .image("mfizz.script")),
+      
+      LCGroup(id: "2", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: .text("mf"))
+    ], content: row)
+ 
+    
+    
   }
 }

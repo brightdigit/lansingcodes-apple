@@ -1,0 +1,27 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "nginx.pdf"
+    },
+    {
+      "scale" : "1x",
+      "filename" : "nginx.1x~universal.png",
+      "idiom" : "universal"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "nginx.2x~universal.png",
+      "idiom" : "universal"
+    },
+    {
+      "scale" : "3x",
+      "filename" : "nginx.3x~universal.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "com.brightdigit.Speculid"
+  }
+}

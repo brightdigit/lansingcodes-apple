@@ -1,0 +1,27 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "playframework-alt.pdf"
+    },
+    {
+      "scale" : "1x",
+      "filename" : "playframework-alt.1x~universal.png",
+      "idiom" : "universal"
+    },
+    {
+      "scale" : "2x",
+      "filename" : "playframework-alt.2x~universal.png",
+      "idiom" : "universal"
+    },
+    {
+      "scale" : "3x",
+      "filename" : "playframework-alt.3x~universal.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "com.brightdigit.Speculid"
+  }
+}

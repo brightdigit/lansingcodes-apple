@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.heroku.imageset",
+  "source" : "../svgs/heroku.svg",
+  "geometry" : "32"
+}

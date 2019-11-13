@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.oracle.imageset",
+  "source" : "../svgs/oracle.svg",
+  "geometry" : "32"
+}

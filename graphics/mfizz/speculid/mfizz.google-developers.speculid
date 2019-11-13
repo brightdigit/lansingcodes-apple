@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.google-developers.imageset",
+  "source" : "../svgs/google-developers.svg",
+  "geometry" : "32"
+}

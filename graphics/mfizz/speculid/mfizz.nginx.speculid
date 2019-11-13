@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.nginx.imageset",
+  "source" : "../svgs/nginx.svg",
+  "geometry" : "32"
+}

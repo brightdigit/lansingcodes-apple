@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.line-graph.imageset",
+  "source" : "../svgs/line-graph.svg",
+  "geometry" : "32"
+}

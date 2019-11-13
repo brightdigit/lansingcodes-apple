@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.scala.imageset",
+  "source" : "../svgs/scala.svg",
+  "geometry" : "32"
+}

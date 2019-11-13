@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.gulp.imageset",
+  "source" : "../svgs/gulp.svg",
+  "geometry" : "32"
+}

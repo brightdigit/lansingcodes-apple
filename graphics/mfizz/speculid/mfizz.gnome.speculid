@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.gnome.imageset",
+  "source" : "../svgs/gnome.svg",
+  "geometry" : "32"
+}

@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.hadoop.imageset",
+  "source" : "../svgs/hadoop.svg",
+  "geometry" : "32"
+}

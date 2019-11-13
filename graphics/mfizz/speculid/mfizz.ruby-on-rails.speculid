@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.ruby-on-rails.imageset",
+  "source" : "../svgs/ruby-on-rails.svg",
+  "geometry" : "32"
+}

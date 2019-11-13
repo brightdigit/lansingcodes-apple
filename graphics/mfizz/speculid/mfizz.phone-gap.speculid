@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.phone-gap.imageset",
+  "source" : "../svgs/phone-gap.svg",
+  "geometry" : "32"
+}

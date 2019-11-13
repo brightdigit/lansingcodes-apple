@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.clojure.imageset",
+  "source" : "../svgs/clojure.svg",
+  "geometry" : "32"
+}

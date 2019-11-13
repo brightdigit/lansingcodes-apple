@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.wordpress.imageset",
+  "source" : "../svgs/wordpress.svg",
+  "geometry" : "32"
+}

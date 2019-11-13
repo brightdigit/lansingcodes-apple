@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.playframework-alt.imageset",
+  "source" : "../svgs/playframework-alt.svg",
+  "geometry" : "32"
+}

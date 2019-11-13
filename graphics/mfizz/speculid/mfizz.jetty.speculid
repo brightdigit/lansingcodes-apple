@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.jetty.imageset",
+  "source" : "../svgs/jetty.svg",
+  "geometry" : "32"
+}

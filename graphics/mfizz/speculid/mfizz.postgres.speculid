@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.postgres.imageset",
+  "source" : "../svgs/postgres.svg",
+  "geometry" : "32"
+}

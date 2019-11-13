@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.debian.imageset",
+  "source" : "../svgs/debian.svg",
+  "geometry" : "32"
+}

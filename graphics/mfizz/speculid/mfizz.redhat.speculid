@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.redhat.imageset",
+  "source" : "../svgs/redhat.svg",
+  "geometry" : "32"
+}

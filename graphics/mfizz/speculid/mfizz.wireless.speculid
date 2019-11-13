@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.wireless.imageset",
+  "source" : "../svgs/wireless.svg",
+  "geometry" : "32"
+}

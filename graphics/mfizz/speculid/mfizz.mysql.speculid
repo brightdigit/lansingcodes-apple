@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.mysql.imageset",
+  "source" : "../svgs/mysql.svg",
+  "geometry" : "32"
+}

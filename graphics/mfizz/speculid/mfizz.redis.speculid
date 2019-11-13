@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.redis.imageset",
+  "source" : "../svgs/redis.svg",
+  "geometry" : "32"
+}

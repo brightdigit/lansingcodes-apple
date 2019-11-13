@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.magento.imageset",
+  "source" : "../svgs/magento.svg",
+  "geometry" : "32"
+}

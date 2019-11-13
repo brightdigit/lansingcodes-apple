@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.tomcat.imageset",
+  "source" : "../svgs/tomcat.svg",
+  "geometry" : "32"
+}

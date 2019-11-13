@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.mobile-phone-alt.imageset",
+  "source" : "../svgs/mobile-phone-alt.svg",
+  "geometry" : "32"
+}

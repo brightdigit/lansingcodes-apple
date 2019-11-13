@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.spring.imageset",
+  "source" : "../svgs/spring.svg",
+  "geometry" : "32"
+}

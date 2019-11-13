@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.symfony.imageset",
+  "source" : "../svgs/symfony.svg",
+  "geometry" : "32"
+}

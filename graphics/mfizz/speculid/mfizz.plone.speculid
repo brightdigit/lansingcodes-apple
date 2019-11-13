@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.plone.imageset",
+  "source" : "../svgs/plone.svg",
+  "geometry" : "32"
+}

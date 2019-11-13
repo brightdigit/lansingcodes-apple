@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.alpinelinux.imageset",
+  "source" : "../svgs/alpinelinux.svg",
+  "geometry" : "32"
+}

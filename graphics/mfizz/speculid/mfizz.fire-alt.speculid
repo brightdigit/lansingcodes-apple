@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.fire-alt.imageset",
+  "source" : "../svgs/fire-alt.svg",
+  "geometry" : "32"
+}

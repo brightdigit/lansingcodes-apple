@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.fedora.imageset",
+  "source" : "../svgs/fedora.svg",
+  "geometry" : "32"
+}

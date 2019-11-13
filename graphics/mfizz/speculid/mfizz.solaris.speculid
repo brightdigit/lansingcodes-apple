@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.solaris.imageset",
+  "source" : "../svgs/solaris.svg",
+  "geometry" : "32"
+}

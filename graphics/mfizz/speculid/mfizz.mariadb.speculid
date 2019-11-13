@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.mariadb.imageset",
+  "source" : "../svgs/mariadb.svg",
+  "geometry" : "32"
+}

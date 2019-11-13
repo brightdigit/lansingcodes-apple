@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.elm.imageset",
+  "source" : "../svgs/elm.svg",
+  "geometry" : "32"
+}

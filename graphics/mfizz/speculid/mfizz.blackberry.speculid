@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/mfizz.blackberry.imageset",
+  "source" : "../svgs/blackberry.svg",
+  "geometry" : "32"
+}

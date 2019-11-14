@@ -7,7 +7,7 @@ struct GroupList: View {
 
     return List(result) { group in
       NavigationLink(destination:
-        Text(group.name).navigationBarTitle(group.name)) {
+        GroupItemView(group: group).navigationBarTitle(group.name)) {
         GroupRowView(group: group)
       }
     }

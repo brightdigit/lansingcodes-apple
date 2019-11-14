@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/Group Icons/fab.meetup.imageset",
+  "source" : "../svgs/brands/meetup.svg",
+  "geometry" : "32"
+}

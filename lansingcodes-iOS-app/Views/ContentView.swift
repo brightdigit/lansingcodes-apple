@@ -27,7 +27,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    let groups = [LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: .image("fas.coffee"))]
+    let groups = [LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", schedule: "Every 6th Friday", icon: .image("fas.coffee"))]
     let data = MockDatastore(groups: groups)
 
     return ContentView().environmentObject(Dataset(db: data))

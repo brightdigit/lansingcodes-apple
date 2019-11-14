@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		B339C0FD237B981700574717 /* GroupRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339C0FC237B981700574717 /* GroupRowView.swift */; };
+		B35AA12B237DB0D10010783F /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12A237DB0D10010783F /* EventList.swift */; };
+		B35AA12D237DB0EA0010783F /* LCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12C237DB0EA0010783F /* LCEvent.swift */; };
 		B372B85823551689006D430A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372B85723551689006D430A /* AppDelegate.swift */; };
 		B372B85A23551689006D430A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372B85923551689006D430A /* SceneDelegate.swift */; };
 		B372B85C23551689006D430A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372B85B23551689006D430A /* ContentView.swift */; };
 		B372B85E2355168C006D430A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B372B85D2355168C006D430A /* Assets.xcassets */; };
 		B372B8612355168C006D430A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B372B8602355168C006D430A /* Preview Assets.xcassets */; };
 		B372B8642355168C006D430A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B372B8622355168C006D430A /* LaunchScreen.storyboard */; };
+		B3775B50237D9A6600C53C06 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3775B4F237D9A6600C53C06 /* HTMLView.swift */; };
 		B3BA53FA237CDE58003CBB59 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53F9237CDE58003CBB59 /* GroupList.swift */; };
 		B3BA53FC237CDF40003CBB59 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */; };
 		B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */; };
@@ -34,6 +37,8 @@
 		30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lansingcodes_iOS_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FD4858CC0ADE8DC675D377 /* Pods-lansingcodes-iOS-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.debug.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.debug.xcconfig"; sourceTree = "<group>"; };
 		B339C0FC237B981700574717 /* GroupRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupRowView.swift; sourceTree = "<group>"; };
+		B35AA12A237DB0D10010783F /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
+		B35AA12C237DB0EA0010783F /* LCEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEvent.swift; sourceTree = "<group>"; };
 		B372B85423551689006D430A /* LansingCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LansingCodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B372B85723551689006D430A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B372B85923551689006D430A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		B372B8602355168C006D430A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B372B8632355168C006D430A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B372B8652355168C006D430A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3775B4F237D9A6600C53C06 /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
 		B3BA53F9237CDE58003CBB59 /* GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
@@ -78,6 +84,8 @@
 				B3BA53F9237CDE58003CBB59 /* GroupList.swift */,
 				B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */,
 				B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */,
+				B3775B4F237D9A6600C53C06 /* HTMLView.swift */,
+				B35AA12A237DB0D10010783F /* EventList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 				B3C998C5237CD3D30035D453 /* NoDataError.swift */,
 				B3C998CD237CD3D30035D453 /* LCIcon.swift */,
 				B3C998CE237CD3D30035D453 /* LCGroup.swift */,
+				B35AA12C237DB0EA0010783F /* LCEvent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,15 +364,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B372B85823551689006D430A /* AppDelegate.swift in Sources */,
+				B35AA12D237DB0EA0010783F /* LCEvent.swift in Sources */,
 				B3BA53FC237CDF40003CBB59 /* ActivityIndicator.swift in Sources */,
 				B372B85A23551689006D430A /* SceneDelegate.swift in Sources */,
 				B3C998D8237CD3D30035D453 /* LCIcon.swift in Sources */,
 				B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */,
 				B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */,
+				B35AA12B237DB0D10010783F /* EventList.swift in Sources */,
 				B339C0FD237B981700574717 /* GroupRowView.swift in Sources */,
 				B3C998D2237CD3D30035D453 /* MissingDocumentFieldError.swift in Sources */,
 				B3C998D4237CD3D30035D453 /* TryConvert.swift in Sources */,
 				B3C998D7237CD3D30035D453 /* Result.swift in Sources */,
+				B3775B50237D9A6600C53C06 /* HTMLView.swift in Sources */,
 				B3C998D9237CD3D30035D453 /* LCGroup.swift in Sources */,
 				B3C998D3237CD3D30035D453 /* NoDataError.swift in Sources */,
 				B3C998D6237CD3D30035D453 /* Datastore.swift in Sources */,

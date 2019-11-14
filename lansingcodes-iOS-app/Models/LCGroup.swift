@@ -6,6 +6,8 @@ struct LCGroup: Identifiable {
   let name: String
   let url: URL
   let description: String
+  let attributedDescription: NSAttributedString?
+  let schedule: String
   let icon: LCIcon?
   /*
    "name": Web,
@@ -21,12 +23,15 @@ struct LCGroup: Identifiable {
        name: String,
        url: URL,
        description: String,
+       schedule: String,
        icon: LCIcon? = nil) {
     self.id = id
     self.name = name
     self.url = url
     self.description = description
+    attributedDescription = self.description.htmlToAttributedString
     self.icon = icon
+    self.schedule = schedule
   }
 
   init(document: QueryDocumentSnapshot) throws {
@@ -40,9 +45,14 @@ struct LCGroup: Identifiable {
     guard let description = document.data()["description"] as? String else {
       throw MissingDocumentFieldError(fieldName: "description")
     }
+    guard let schedule = document.data()["schedule"] as? String else {
+      throw MissingDocumentFieldError(fieldName: "schedule")
+    }
     self.name = name
     self.url = url
     self.description = description
+    self.schedule = schedule
+    attributedDescription = self.description.htmlToAttributedString
     if let iconSet = document.data()["iconSet"] as? String, let iconName = document.data()["iconName"] as? String {
       let name: String
       let components = iconName.components(separatedBy: "-")

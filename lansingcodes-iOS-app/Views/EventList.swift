@@ -64,7 +64,7 @@ struct EventList_Previews: PreviewProvider {
       LCEvent(
         id: UUID().uuidString,
         location: LCLocation(venue: "New Place", address: ""),
-        description: "Talk about stuff", name: "JS 101",
+        description: "Talk about stuff", name: "Lean Coffee Code",
         date: Date(),
         url: URL(string: "https://google.com")!,
         group: "meetups"

@@ -9,13 +9,15 @@ struct EventRowView: View {
   }()
 
   var body: some View {
-    HStack {
-      Text(self.event.name)
-      Spacer()
-      Text("\(self.event.date, formatter: Self.taskDateFormat)")
-      Spacer()
-      Text(self.event.location?.venue ?? "TBA")
-    }.opacity(self.event.date < Date() ? 0.5 : 1.0)
+    VStack(alignment: .leading) {
+      Text(self.event.name).lineLimit(1)
+      HStack {
+        Text("\(self.event.date, formatter: Self.taskDateFormat)")
+        Spacer()
+        Text(self.event.location?.venue ?? "TBA")
+      }
+    }
+    .opacity(self.event.date < Date() ? 0.5 : 1.0)
   }
 }
 
@@ -24,7 +26,7 @@ struct EventRowView_Previews: PreviewProvider {
     let event = LCEvent(
       id: UUID().uuidString,
       location: LCLocation(venue: "New Place", address: ""),
-      description: "Talk about stuff", name: "JS 101",
+      description: "Talk about stuff", name: "How to Get Started with Swift in 2020",
       date: Date(),
       url: URL(string: "https://google.com")!,
       group: "meetups"

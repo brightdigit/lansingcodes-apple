@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct GroupItemView: View {
-  @EnvironmentObject var dataset: Dataset
   let group: LCGroup
 
   var body: some View {
@@ -10,6 +9,7 @@ struct GroupItemView: View {
       link
       HTMLView(text: group.attributedDescription).background(Color.yellow).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
       Spacer()
+      EventList(groupId: group.id)
     }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: Alignment.topLeading).padding(20.0)
   }
 

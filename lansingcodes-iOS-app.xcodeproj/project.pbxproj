@@ -30,6 +30,7 @@
 		B3C998D9237CD3D30035D453 /* LCGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C998CE237CD3D30035D453 /* LCGroup.swift */; };
 		B3D7A016235550690069AB03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3D7A015235550690069AB03 /* GoogleService-Info.plist */; };
 		B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F60EC3235691C1001A1148 /* Dataset.swift */; };
+		B3FD7A23237DCDC100416F8A /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD7A22237DCDC100416F8A /* EventRowView.swift */; };
 		B6D408223E87A3219097F1F1 /* Pods_lansingcodes_iOS_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		B3C998CE237CD3D30035D453 /* LCGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCGroup.swift; sourceTree = "<group>"; };
 		B3D7A015235550690069AB03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3F60EC3235691C1001A1148 /* Dataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		B3FD7A22237DCDC100416F8A /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
 		D112AB34B77665CE178C403A /* Pods-lansingcodes-iOS-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.release.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 				B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */,
 				B3775B4F237D9A6600C53C06 /* HTMLView.swift */,
 				B35AA12A237DB0D10010783F /* EventList.swift */,
+				B3FD7A22237DCDC100416F8A /* EventRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				B3C998D7237CD3D30035D453 /* Result.swift in Sources */,
 				B3775B50237D9A6600C53C06 /* HTMLView.swift in Sources */,
 				B3C998D9237CD3D30035D453 /* LCGroup.swift in Sources */,
+				B3FD7A23237DCDC100416F8A /* EventRowView.swift in Sources */,
 				B3C998D3237CD3D30035D453 /* NoDataError.swift in Sources */,
 				B3C998D6237CD3D30035D453 /* Datastore.swift in Sources */,
 				B372B85C23551689006D430A /* ContentView.swift in Sources */,

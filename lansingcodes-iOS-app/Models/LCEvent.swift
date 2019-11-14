@@ -10,12 +10,30 @@ struct LCEvent: DataModel, Identifiable {
   static let queryName: String = "events"
 
   let id: String
-  let location: LCLocation
+  let location: LCLocation?
   let description: String
   let name: String
   let date: Date
   let url: URL
   let group: String
+
+  public init(
+    id: String,
+    location: LCLocation,
+    description: String,
+    name: String,
+    date: Date,
+    url: URL,
+    group: String
+  ) {
+    self.id = id
+    self.location = location
+    self.description = description
+    self.name = name
+    self.date = date
+    self.url = url
+    self.group = group
+  }
 
   init(document: QueryDocumentSnapshot) throws {
     id = document.documentID
@@ -34,17 +52,17 @@ struct LCEvent: DataModel, Identifiable {
     guard let startTime = document.data()["startTime"] as? TimeInterval else {
       throw MissingDocumentFieldError(fieldName: "startTime")
     }
-    guard let venue = document.data()["venue"] as? String else {
-      throw MissingDocumentFieldError(fieldName: "venue")
-    }
-    guard let address = document.data()["address"] as? String else {
-      throw MissingDocumentFieldError(fieldName: "address")
+    let location: LCLocation?
+    if let venue = document.data()["venue"] as? String, let address = document.data()["address"] as? String {
+      location = LCLocation(venue: venue, address: address)
+    } else {
+      location = nil
     }
     self.name = name
     self.url = url
     self.description = description
     self.group = group
-    date = Date(timeIntervalSince1970: startTime)
-    location = LCLocation(venue: venue, address: address)
+    date = Date(timeIntervalSince1970: startTime / 1000)
+    self.location = location
   }
 }

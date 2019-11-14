@@ -5,8 +5,12 @@ struct MockDatastore: Datastore {
     if type == LCGroup.self {
       // swiftlint:disable:next force_cast
       closure(.success(groups as! [ItemType]))
+    } else if type == LCEvent.self {
+      // swiftlint:disable:next force_cast
+      closure(.success(events as! [ItemType]))
     }
   }
 
   let groups: [LCGroup]
+  let events: [LCEvent]
 }

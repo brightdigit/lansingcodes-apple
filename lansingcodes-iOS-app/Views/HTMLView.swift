@@ -43,15 +43,21 @@ extension String {
 struct HTMLView: UIViewRepresentable {
   let text: NSAttributedString?
 
-  func makeUIView(context _: UIViewRepresentableContext<HTMLView>) -> UITextView {
-    let label = UITextView()
+  let width: CGFloat
+  func makeUIView(context _: UIViewRepresentableContext<HTMLView>) -> UILabel {
+    let label = UILabel()
 
+    label.lineBreakMode = .byWordWrapping
     label.attributedText = text
+    label.numberOfLines = 0
+    label.preferredMaxLayoutWidth = width
+
     label.sizeToFit()
+
     return label
   }
 
-  func updateUIView(_ uiView: UITextView, context _: UIViewRepresentableContext<HTMLView>) {
+  func updateUIView(_ uiView: UILabel, context _: UIViewRepresentableContext<HTMLView>) {
     uiView.attributedText = text
     uiView.sizeToFit()
   }
@@ -63,7 +69,9 @@ struct HTMLView_Previews: PreviewProvider {
     It's easy to spin your wheels pounding at the keyboard, but a focus on <em>process</em> will make you orders of magnitude more effective.
     """.htmlToAttributedString
     return VStack {
-      HTMLView(text: text)
+      GeometryReader {
+        HTMLView(text: text, width: $0.size.width)
+      }
     }.background(Color.red)
   }
 }

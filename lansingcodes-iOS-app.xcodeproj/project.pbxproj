@@ -200,9 +200,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B372B8682355168C006D430A /* Build configuration list for PBXNativeTarget "lansingcodes-iOS-app" */;
 			buildPhases = (
+				5649E97677305AB324ADDF2C /* [CP] Check Pods Manifest.lock */,
 				B3BA5400237CE3AC003CBB59 /* swiftformat */,
 				B3BA53FF237CE366003CBB59 /* swiftlint */,
-				5649E97677305AB324ADDF2C /* [CP] Check Pods Manifest.lock */,
 				B339C0F7237AE0B700574717 /* Build Icons and Images */,
 				B372B85023551689006D430A /* Sources */,
 				B372B85123551689006D430A /* Frameworks */,
@@ -322,7 +322,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --path \"${SRCROOT}/lansingcodes-iOS-app\"\n";
 		};
 		B3BA5400237CE3AC003CBB59 /* swiftformat */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -340,7 +340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"lansingcodes-iOS-app\"\n";
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"${SRCROOT}/lansingcodes-iOS-app\"\n";
 		};
 		FB31767BD291CDEAA8B52B2E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

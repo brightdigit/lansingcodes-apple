@@ -7,7 +7,10 @@ struct GroupItemView: View {
     VStack(alignment: HorizontalAlignment.leading) {
       icon.scaledToFit().frame(minWidth: 0, maxWidth: 100, alignment: .topLeading)
       link
-      HTMLView(text: group.attributedDescription).background(Color.yellow).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+      GeometryReader { geometry in
+        HTMLView(text: self.group.attributedDescription, width: geometry.size.width)
+      }
+
       Spacer()
       EventList(groupId: group.id)
     }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: Alignment.topLeading).padding(20.0)

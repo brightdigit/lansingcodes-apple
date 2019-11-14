@@ -16,6 +16,7 @@
 		B372B8642355168C006D430A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B372B8622355168C006D430A /* LaunchScreen.storyboard */; };
 		B3BA53FA237CDE58003CBB59 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53F9237CDE58003CBB59 /* GroupList.swift */; };
 		B3BA53FC237CDF40003CBB59 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */; };
+		B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */; };
 		B3C998C2237CD23C0035D453 /* MockDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C998C1237CD23C0035D453 /* MockDatastore.swift */; };
 		B3C998D2237CD3D30035D453 /* MissingDocumentFieldError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C998C4237CD3D30035D453 /* MissingDocumentFieldError.swift */; };
 		B3C998D3237CD3D30035D453 /* NoDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C998C5237CD3D30035D453 /* NoDataError.swift */; };
@@ -43,6 +44,7 @@
 		B372B8652355168C006D430A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3BA53F9237CDE58003CBB59 /* GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
 		B3C998C1237CD23C0035D453 /* MockDatastore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatastore.swift; sourceTree = "<group>"; };
 		B3C998C4237CD3D30035D453 /* MissingDocumentFieldError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissingDocumentFieldError.swift; sourceTree = "<group>"; };
 		B3C998C5237CD3D30035D453 /* NoDataError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataError.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				B339C0FC237B981700574717 /* GroupRowView.swift */,
 				B3BA53F9237CDE58003CBB59 /* GroupList.swift */,
 				B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */,
+				B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +188,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B372B8682355168C006D430A /* Build configuration list for PBXNativeTarget "lansingcodes-iOS-app" */;
 			buildPhases = (
+				B3BA5400237CE3AC003CBB59 /* swiftformat */,
+				B3BA53FF237CE366003CBB59 /* swiftlint */,
 				5649E97677305AB324ADDF2C /* [CP] Check Pods Manifest.lock */,
 				B339C0F7237AE0B700574717 /* Build Icons and Images */,
 				B372B85023551689006D430A /* Sources */,
@@ -289,6 +294,42 @@
 			shellPath = /bin/sh;
 			shellScript = "#find \"${SRCROOT}\" -name \"*.speculid\" -print0 |\n#while IFS= read -r -d $'\\0' line; do\n#speculid --process \"$line\" &\n#done\n#wait\n";
 		};
+		B3BA53FF237CE366003CBB59 /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		B3BA5400237CE3AC003CBB59 /* swiftformat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftformat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"lansingcodes-iOS-app\"\n";
+		};
 		FB31767BD291CDEAA8B52B2E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +359,7 @@
 				B372B85A23551689006D430A /* SceneDelegate.swift in Sources */,
 				B3C998D8237CD3D30035D453 /* LCIcon.swift in Sources */,
 				B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */,
+				B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */,
 				B339C0FD237B981700574717 /* GroupRowView.swift in Sources */,
 				B3C998D2237CD3D30035D453 /* MissingDocumentFieldError.swift in Sources */,
 				B3C998D4237CD3D30035D453 /* TryConvert.swift in Sources */,

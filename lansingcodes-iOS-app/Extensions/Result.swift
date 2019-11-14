@@ -8,8 +8,8 @@ extension Result {
       self = .failure(error ?? defaultError)
     }
   }
-  
-  var error : Failure? {
+
+  var error: Failure? {
     if case let .failure(error) = self {
       return error
     } else {

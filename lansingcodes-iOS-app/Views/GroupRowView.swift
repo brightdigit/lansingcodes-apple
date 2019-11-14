@@ -1,50 +1,39 @@
-//
-//  GroupRowView.swift
-//  lansingcodes-iOS-app
-//
-//  Created by Leo Dion on 11/12/19.
-//  Copyright © 2019 BrightDigit. All rights reserved.
-//
-
 import SwiftUI
 
 struct GroupRowView: View {
-  let group : LCGroup
+  let group: LCGroup
   var body: some View {
-    HStack{
+    HStack {
       icon.frame(width: 42, height: nil, alignment: .leading)
       Text(group.name)
     }
   }
-  
-  var icon : some View {
 
-    ZStack{
+  var icon: some View {
+    ZStack {
       iconImage
       iconText
     }
   }
-  
-  var iconImage : some View {
-    return self.group.icon.flatMap { (icon) in
+
+  var iconImage: some View {
+    return self.group.icon.flatMap { icon in
       guard case let .image(name) = icon else {
         return nil
       }
       return name
-    }.map{
+    }.map {
       Image($0)
     }
   }
-  
-  
-  
-  var iconText : some View {
+
+  var iconText: some View {
     return self.group.icon.flatMap { (icon) -> String? in
       guard case let .text(string) = icon else {
         return nil
       }
       return string
-    }.map{
+    }.map {
       Text($0).font(.system(size: 24, weight: .black))
     }
   }
@@ -52,17 +41,14 @@ struct GroupRowView: View {
 
 struct GroupRowView_Previews: PreviewProvider {
   static func row(forGroup group: LCGroup) -> some View {
-    
     GroupRowView(group: group).previewLayout(PreviewLayout.fixed(width: 300, height: 50))
   }
+
   static var previews: some View {
     ForEach([
       LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: .image("mfizz.script")),
-      
-      LCGroup(id: "2", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: .text("mf"))
+
+      LCGroup(id: "2", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", icon: .text("mf")),
     ], content: row)
- 
-    
-    
   }
 }

@@ -1,3 +1,4 @@
+// swiftlint:disable all
 import Cocoa
 
 struct LCGroupIcon : Codable {

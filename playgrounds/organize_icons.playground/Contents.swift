@@ -1,3 +1,4 @@
+// swiftlint:disable all
 import Cocoa
 
 let url = URL(string: "https://raw.githubusercontent.com/lansingcodes/www/master/plugins/font-awesome.js")!

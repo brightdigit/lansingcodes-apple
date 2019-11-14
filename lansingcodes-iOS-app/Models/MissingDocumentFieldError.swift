@@ -1,5 +1,5 @@
 
 
-struct MissingDocumentFieldError : Error {
-  let fieldName : String
+struct MissingDocumentFieldError: Error {
+  let fieldName: String
 }

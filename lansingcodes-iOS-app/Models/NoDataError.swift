@@ -1,5 +1,3 @@
 
 
-struct NoDataError : Error {
-  
-}
+struct NoDataError: Error {}

@@ -12,7 +12,7 @@ struct ContentView: View {
   @EnvironmentObject var dataset : Dataset
   var body: some View {
     ZStack {
-      list
+      GroupList()
       error
       busy
     }
@@ -22,19 +22,11 @@ struct ContentView: View {
   var busy : some View {
     Group {
       if dataset.groups == nil {
-        Text("Busy")
+        ActivityIndicator(isAnimating: .constant(true), style: .large)
       }
     }
   }
   
-  var list : some View {
-    let result = dataset.groups.flatMap({ try? $0.get() }) ?? [LCGroup]()
-    
-    return List(result) { (group) in
-      GroupRowView(group: group)
-    }
-     
-  }
   
   
   var error : some View {

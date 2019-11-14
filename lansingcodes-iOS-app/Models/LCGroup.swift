@@ -1,7 +1,11 @@
 import Firebase
 import Foundation
 
-struct LCGroup: Identifiable {
+struct LCGroup: Identifiable, DataModel {
+  static var queryName: String {
+    return "groups"
+  }
+
   let id: String
   let name: String
   let url: URL
@@ -9,16 +13,7 @@ struct LCGroup: Identifiable {
   let attributedDescription: NSAttributedString?
   let schedule: String
   let icon: LCIcon?
-  /*
-   "name": Web,
-   "schedule": 2nd Wednesday,
-   "description": Share your latest project,
-      talk about tools you're using, network, trade advice, or just chat about the web.,
-   "url": https://www.meetup.com/lansingweb/,
-   "slug": lansingweb,
-   "iconName": html5,
-   "iconSet": fab
-   */
+
   init(id: String,
        name: String,
        url: URL,

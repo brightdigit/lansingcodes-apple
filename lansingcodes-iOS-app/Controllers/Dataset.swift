@@ -5,17 +5,27 @@ class Dataset: ObservableObject {
   let db: Datastore
   let queue: DispatchQueue?
   @Published var groups: Result<[LCGroup], Error>?
+  @Published var events: Result<[LCEvent], Error>?
 
   init(db: Datastore, queue: DispatchQueue? = nil) {
     self.db = db
     self.queue = queue
-    db.group { groups in
+    db.query(LCGroup.self) { groups in
       if let queue = queue {
         queue.async {
           self.groups = groups
         }
       } else {
         self.groups = groups
+      }
+    }
+    db.query(LCEvent.self) { events in
+      if let queue = queue {
+        queue.async {
+          self.events = events
+        }
+      } else {
+        self.events = events
       }
     }
   }

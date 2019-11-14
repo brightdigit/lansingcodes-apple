@@ -45,7 +45,7 @@ struct GroupRowView: View {
       }
       return string
     }.map{
-      Text($0).fontWeight(.bold)
+      Text($0).font(.system(size: 24, weight: .black))
     }
   }
 }

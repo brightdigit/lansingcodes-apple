@@ -8,14 +8,6 @@
 
 import SwiftUI
 
-struct MockDatastore : Datastore {
-  let groups : [LCGroup]
-  func group(_ closure: @escaping (Result<[LCGroup], Error>) -> Void) {
-    closure(.success(self.groups))
-  }
-  
-  
-}
 struct ContentView: View {
   @EnvironmentObject var dataset : Dataset
   var body: some View {

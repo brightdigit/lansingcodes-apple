@@ -123,8 +123,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B372B8682355168C006D430A /* Build configuration list for PBXNativeTarget "lansingcodes-iOS-app" */;
 			buildPhases = (
-				B339C0F7237AE0B700574717 /* Build Icons and Images */,
 				5649E97677305AB324ADDF2C /* [CP] Check Pods Manifest.lock */,
+				B339C0F7237AE0B700574717 /* Build Icons and Images */,
 				B372B85023551689006D430A /* Sources */,
 				B372B85123551689006D430A /* Frameworks */,
 				B372B85223551689006D430A /* Resources */,

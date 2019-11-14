@@ -91,7 +91,14 @@ icon : LCIcon? = nil) {
     self.description = description
     if let iconSet = document.data()["iconSet"] as? String, let iconName = document.data()["iconName"] as? String {
 
-      self.icon = .image([iconSet,iconName].joined(separator: "."))
+      let name : String
+      let components = iconName.components(separatedBy: "-")
+      if iconSet == "mfizz", components.count == 2, let nameOpt = components.last {
+        name = nameOpt
+      } else {
+        name = iconName
+      }
+      self.icon = .image([iconSet,name].joined(separator: "."))
     } else if let iconText = document.data()["iconText"] as? String {
       self.icon = .text(iconText)
     } else {

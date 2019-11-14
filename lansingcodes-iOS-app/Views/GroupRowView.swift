@@ -12,7 +12,7 @@ struct GroupRowView: View {
   let group : LCGroup
   var body: some View {
     HStack{
-      icon
+      icon.frame(width: 42, height: nil, alignment: .leading)
       Text(group.name)
     }
   }

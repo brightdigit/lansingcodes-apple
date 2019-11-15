@@ -5,15 +5,15 @@ struct GroupItemView: View {
 
   var body: some View {
     VStack(alignment: HorizontalAlignment.leading) {
-      icon.scaledToFit().frame(minWidth: 0, maxWidth: 100, alignment: .topLeading)
-      link
-      GeometryReader { geometry in
-        HTMLView(text: self.group.attributedDescription, width: geometry.size.width)
-      }
-
-      Spacer()
+      VStack(alignment: HorizontalAlignment.leading) {
+        icon.scaledToFit().frame(minWidth: 0, maxWidth: 100, alignment: .topLeading)
+        link
+        GeometryReader { geometry in
+          HTMLView(text: self.group.attributedDescription, width: geometry.size.width)
+        }.frame(width: nil, height: 100.0, alignment: .topLeading)
+      }.padding(EdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0))
       EventList(groupId: group.id)
-    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: Alignment.topLeading).padding(20.0)
+    }.frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: Alignment.topLeading)
   }
 
   var link: some View {
@@ -49,7 +49,7 @@ struct GroupItemView: View {
       }
       return name
     }.map {
-      Image($0).resizable()
+      Image($0).resizable().renderingMode(.template)
     }
   }
 
@@ -71,6 +71,6 @@ struct GroupItemView_Previews: PreviewProvider {
     It's easy to spin your wheels pounding at the keyboard, but a focus on <em>process</em> will make you orders of magnitude more effective.
     """, schedule: "Every 6th Friday", icon: .image("fab.js-square"))
     return NavigationView { GroupItemView(group: group).navigationBarTitle(group.name)
-    }
+    }.environmentObject(Dataset(db: MockDatastore(groups: [group], events: [LCEvent]()))).environment(\.colorScheme, .dark)
   }
 }

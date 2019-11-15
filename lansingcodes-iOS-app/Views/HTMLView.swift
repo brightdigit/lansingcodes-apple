@@ -29,6 +29,7 @@ extension String {
         .characterEncoding: String.Encoding.utf8.rawValue,
       ], documentAttributes: nil)
       attrString.replaceFonts(with: .systemFont(ofSize: 20.0))
+      attrString.addAttribute(.foregroundColor, value: UIColor.label, range: NSRange(location: 0, length: attrString.length))
       return attrString
     } catch {
       return NSAttributedString()

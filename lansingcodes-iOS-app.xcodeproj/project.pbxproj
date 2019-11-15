@@ -10,6 +10,7 @@
 		B339C0FD237B981700574717 /* GroupRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339C0FC237B981700574717 /* GroupRowView.swift */; };
 		B35AA12B237DB0D10010783F /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12A237DB0D10010783F /* EventList.swift */; };
 		B35AA12D237DB0EA0010783F /* LCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12C237DB0EA0010783F /* LCEvent.swift */; };
+		B36EA507237E308700A91126 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36EA506237E308700A91126 /* MapKit.framework */; };
 		B372B85823551689006D430A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372B85723551689006D430A /* AppDelegate.swift */; };
 		B372B85A23551689006D430A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372B85923551689006D430A /* SceneDelegate.swift */; };
 		B372B85C23551689006D430A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B372B85B23551689006D430A /* ContentView.swift */; };
@@ -40,6 +41,8 @@
 		B339C0FC237B981700574717 /* GroupRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupRowView.swift; sourceTree = "<group>"; };
 		B35AA12A237DB0D10010783F /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		B35AA12C237DB0EA0010783F /* LCEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEvent.swift; sourceTree = "<group>"; };
+		B36EA506237E308700A91126 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B36EA508237E309100A91126 /* LansingCodes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LansingCodes.entitlements; sourceTree = "<group>"; };
 		B372B85423551689006D430A /* LansingCodes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LansingCodes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B372B85723551689006D430A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B372B85923551689006D430A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36EA507237E308700A91126 /* MapKit.framework in Frameworks */,
 				B6D408223E87A3219097F1F1 /* Pods_lansingcodes_iOS_app.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +118,7 @@
 		B372B85623551689006D430A /* lansingcodes-iOS-app */ = {
 			isa = PBXGroup;
 			children = (
+				B36EA508237E309100A91126 /* LansingCodes.entitlements */,
 				B3C998C0237CD2250035D453 /* Controllers */,
 				B339C0FB237B981700574717 /* Views */,
 				B3C998CA237CD3D30035D453 /* Extensions */,
@@ -179,6 +184,7 @@
 		C4C1494478CB1B384D5A9719 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B36EA506237E308700A91126 /* MapKit.framework */,
 				30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */,
 			);
 			name = Frameworks;
@@ -304,7 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#find \"${SRCROOT}\" -name \"*.speculid\" -print0 |\n#while IFS= read -r -d $'\\0' line; do\n#speculid --process \"$line\" &\n#done\n#wait\n";
+			shellScript = "find \"${SRCROOT}\" -name \"*.speculid\" -print0 |\nwhile IFS= read -r -d $'\\0' line; do\nspeculid --process \"$line\" \ndone\n";
 		};
 		B3BA53FF237CE366003CBB59 /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -522,7 +528,9 @@
 			baseConfigurationReference = B2FD4858CC0ADE8DC675D377 /* Pods-lansingcodes-iOS-app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "lansingcodes-iOS-app/LansingCodes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"lansingcodes-iOS-app/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_PREVIEWS = YES;
@@ -543,7 +551,9 @@
 			baseConfigurationReference = D112AB34B77665CE178C403A /* Pods-lansingcodes-iOS-app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "lansingcodes-iOS-app/LansingCodes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"lansingcodes-iOS-app/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_PREVIEWS = YES;

@@ -23,7 +23,7 @@ struct GroupRowView: View {
       }
       return name
     }.map {
-      Image($0)
+      Image($0).renderingMode(.template)
     }
   }
 

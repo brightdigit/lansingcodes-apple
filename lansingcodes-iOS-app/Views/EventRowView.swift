@@ -12,9 +12,9 @@ struct EventRowView: View {
     VStack(alignment: .leading) {
       Text(self.event.name).lineLimit(1)
       HStack {
-        Text("\(self.event.date, formatter: Self.taskDateFormat)")
+        Text("\(self.event.date, formatter: Self.taskDateFormat)").lineLimit(1)
         Spacer()
-        Text(self.event.location?.venue ?? "TBA")
+        Text(self.event.location?.venue ?? "").lineLimit(1)
       }
     }
     .opacity(self.event.date < Date() ? 0.5 : 1.0)

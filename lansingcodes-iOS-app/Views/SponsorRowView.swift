@@ -29,9 +29,12 @@ struct SponsorRowView: View {
   }
 
   var body: some View {
-    VStack {
-      logoLoader.image
-      Text(sponsor.name)
+    VStack(alignment: .leading) {
+      logoLoader.image.resizable().scaledToFit().frame(height: 50.0, alignment: .leading)
+      Text(sponsor.name).font(.title)
+      Text(sponsor.description)
+      Spacer()
+      Text(sponsor.url.absoluteString).font(.caption)
     }
   }
 }
@@ -44,6 +47,6 @@ struct SponsorRowView_Previews: PreviewProvider {
       logoUrl: URL(string: "https://i.imgur.com/pI2XjZb.png")!,
       url: URL(string: "https://www.a2hosting.com")!
     )
-    return SponsorRowView(sponsor: sponsor).previewLayout(PreviewLayout.fixed(width: 300, height: 50))
+    return SponsorRowView(sponsor: sponsor).previewLayout(PreviewLayout.fixed(width: 300, height: 200))
   }
 }

@@ -14,7 +14,9 @@ struct SponsorList: View {
   var list: some View {
     let sponsors = self.dataset.sponsors.flatMap { try? $0.get() } ?? [LCSponsor]()
     return List(sponsors) { sponsor in
-      SponsorRowView(sponsor: sponsor)
+      SponsorRowView(sponsor: sponsor).onTapGesture {
+        UIApplication.shared.open(sponsor.url)
+      }
     }
   }
 

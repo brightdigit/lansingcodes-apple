@@ -1,8 +1,33 @@
 import SwiftUI
 
 struct SponsorList: View {
+  @EnvironmentObject var dataset: Dataset
+
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    ZStack {
+      list
+      error
+      busy
+    }
+  }
+
+  var list: some View {
+    let sponsors = self.dataset.sponsors.flatMap { try? $0.get() } ?? [LCSponsor]()
+    return List(sponsors) { sponsor in
+      SponsorRowView(sponsor: sponsor)
+    }
+  }
+
+  var busy: some View {
+    Group {
+      if self.dataset.sponsors == nil {
+        ActivityIndicator(isAnimating: .constant(true), style: .large)
+      }
+    }
+  }
+
+  var error: some View {
+    Text(self.dataset.sponsors?.error?.localizedDescription ?? "")
   }
 }
 

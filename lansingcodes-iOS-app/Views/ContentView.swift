@@ -10,7 +10,7 @@ struct ContentView: View {
           error
           busy
         }.navigationBarTitle("Groups")
-      }.tabItem {
+      }.navigationViewStyle(StackNavigationViewStyle()).tabItem {
         Image("fas.users").renderingMode(.template)
         Text("Groups")
       }.tag(0)
@@ -20,7 +20,7 @@ struct ContentView: View {
           error
           busy
         }.navigationBarTitle("Events")
-      }.tabItem {
+      }.navigationViewStyle(StackNavigationViewStyle()).tabItem {
         Image("far.calendar-alt").renderingMode(.template)
         Text("Events")
       }.tag(1)
@@ -30,7 +30,7 @@ struct ContentView: View {
           error
           busy
         }.navigationBarTitle("Sponsors")
-      }.tabItem {
+      }.navigationViewStyle(StackNavigationViewStyle()).tabItem {
         Image("fas.hand-holding-heart").renderingMode(.template)
         Text("Sponsors")
       }.tag(2)
@@ -40,7 +40,7 @@ struct ContentView: View {
           error
           busy
         }.navigationBarTitle("About")
-      }.tabItem {
+      }.navigationViewStyle(StackNavigationViewStyle()).tabItem {
         Image("far.thumbs-up").renderingMode(.template)
         Text("About")
       }.tag(3)
@@ -65,6 +65,6 @@ struct ContentView_Previews: PreviewProvider {
     let groups = [LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", schedule: "Every 6th Friday", icon: .image("fas.coffee"))]
     let data = MockDatastore(groups: groups, events: [LCEvent]())
 
-    return ContentView().environmentObject(Dataset(db: data)).environment(\.colorScheme, .dark)
+    return ContentView().environmentObject(Dataset(db: data))
   }
 }

@@ -16,6 +16,8 @@ struct GroupList: View {
 
 struct GroupList_Previews: PreviewProvider {
   static var previews: some View {
-    GroupList()
+    let groups = [LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", schedule: "Every 6th Friday", icon: .image("fas.coffee"))]
+    let data = MockDatastore(groups: groups, events: [LCEvent]())
+    return GroupList().environmentObject(Dataset(db: data))
   }
 }

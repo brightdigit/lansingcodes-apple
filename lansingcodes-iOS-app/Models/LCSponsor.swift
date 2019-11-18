@@ -28,6 +28,7 @@ struct LCSponsor: DataModel, Identifiable {
     self.name = name
     self.description = description
     self.logoUrl = logoUrl
+
     self.url = url
   }
 

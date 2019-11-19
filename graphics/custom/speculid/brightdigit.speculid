@@ -1,0 +1,5 @@
+{
+  "set" : "../../../lansingcodes-iOS-app/Assets.xcassets/BrightDigit.imageset",
+  "source" : "../svgs/brightdigit-template.svg",
+  "geometry" : "64"
+}

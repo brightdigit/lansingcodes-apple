@@ -6,6 +6,7 @@ class Dataset: ObservableObject {
   let queue: DispatchQueue?
   @Published var groups: Result<[LCGroup], Error>?
   @Published var events: Result<[LCEvent], Error>?
+  @Published var sponsors: Result<[LCSponsor], Error>?
 
   init(db: Datastore, queue: DispatchQueue? = nil) {
     self.db = db
@@ -26,6 +27,15 @@ class Dataset: ObservableObject {
         }
       } else {
         self.events = events
+      }
+    }
+    db.query(LCSponsor.self) { events in
+      if let queue = queue {
+        queue.async {
+          self.sponsors = events
+        }
+      } else {
+        self.sponsors = events
       }
     }
   }

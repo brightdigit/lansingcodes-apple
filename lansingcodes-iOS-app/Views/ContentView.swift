@@ -3,12 +3,47 @@ import SwiftUI
 struct ContentView: View {
   @EnvironmentObject var dataset: Dataset
   var body: some View {
-    NavigationView {
-      ZStack {
-        GroupList()
-        error
-        busy
-      }.navigationBarTitle("Groups")
+    TabView {
+      NavigationView {
+        ZStack {
+          GroupList()
+          error
+          busy
+        }.navigationBarTitle("Groups")
+      }.navigationViewStyle(StackNavigationViewStyle()).tabItem {
+        Image("fas.users").renderingMode(.template)
+        Text("Groups")
+      }.tag(0)
+      NavigationView {
+        ZStack {
+          EventList(groupId: nil)
+          error
+          busy
+        }.navigationBarTitle("Events")
+      }.navigationViewStyle(StackNavigationViewStyle()).tabItem {
+        Image("far.calendar-alt").renderingMode(.template)
+        Text("Events")
+      }.tag(1)
+      NavigationView {
+        ZStack {
+          SponsorList()
+          error
+          busy
+        }.navigationBarTitle("Sponsors")
+      }.navigationViewStyle(StackNavigationViewStyle()).tabItem {
+        Image("fas.hand-holding-heart").renderingMode(.template)
+        Text("Sponsors")
+      }.tag(2)
+      NavigationView {
+        ZStack {
+          AboutView()
+          error
+          busy
+        }.navigationBarTitle("About")
+      }.navigationViewStyle(StackNavigationViewStyle()).tabItem {
+        Image("far.thumbs-up").renderingMode(.template)
+        Text("About")
+      }.tag(3)
     }
   }
 

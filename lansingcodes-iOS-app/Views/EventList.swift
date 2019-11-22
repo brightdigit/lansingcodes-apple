@@ -68,9 +68,9 @@ struct EventList_Previews: PreviewProvider {
         date: Date(),
         url: URL(string: "https://google.com")!,
         group: "meetups"
-      ),
+      )
     ]
     let mockDataset = MockDatastore(groups: [LCGroup](), events: events)
-    return EventList(groupId: nil).previewLayout(PreviewLayout.fixed(width: 300, height: 50)).environmentObject(Dataset(db: mockDataset))
+    return EventList(groupId: nil).previewLayout(PreviewLayout.fixed(width: 300, height: 50)).environmentObject(Dataset(store: mockDataset))
   }
 }

@@ -6,7 +6,7 @@ extension NSMutableAttributedString {
   func replaceFonts(with font: UIFont) {
     let baseFontDescriptor = font.fontDescriptor
     var changes = [NSRange: UIFont]()
-    enumerateAttribute(.font, in: NSMakeRange(0, length), options: []) { foundFont, range, _ in
+    enumerateAttribute(.font, in: NSRange(location: 0, length: length), options: []) { foundFont, range, _ in
       if let htmlTraits = (foundFont as? UIFont)?.fontDescriptor.symbolicTraits,
         let adjustedDescriptor = baseFontDescriptor.withSymbolicTraits(htmlTraits) {
         let newFont = UIFont(descriptor: adjustedDescriptor, size: font.pointSize)
@@ -26,7 +26,7 @@ extension String {
     do {
       let attrString = try NSMutableAttributedString(data: data, options: [
         .documentType: NSAttributedString.DocumentType.html,
-        .characterEncoding: String.Encoding.utf8.rawValue,
+        .characterEncoding: String.Encoding.utf8.rawValue
       ], documentAttributes: nil)
       attrString.replaceFonts(with: .systemFont(ofSize: 20.0))
       attrString.addAttribute(.foregroundColor, value: UIColor.label, range: NSRange(location: 0, length: attrString.length))

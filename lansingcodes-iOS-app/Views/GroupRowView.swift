@@ -46,9 +46,19 @@ struct GroupRowView_Previews: PreviewProvider {
 
   static var previews: some View {
     ForEach([
-      LCGroup(id: "1", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", schedule: "Every 6th Friday", icon: .image("mfizz.script")),
+      LCGroup(id: "1",
+              name: "Web",
+              url: URL(string: "https://www.google.com/")!,
+              description: "Super Web",
+              schedule: "Every 6th Friday",
+              icon: .image("mfizz.script")),
 
-      LCGroup(id: "2", name: "Web", url: URL(string: "https://www.google.com/")!, description: "Super Web", schedule: "Every 6th Friday", icon: .text("mf")),
+      LCGroup(id: "2",
+              name: "Web",
+              url: URL(string: "https://www.google.com/")!,
+              description: "Super Web",
+              schedule: "Every 6th Friday",
+              icon: .text("mf"))
     ], content: row)
   }
 }

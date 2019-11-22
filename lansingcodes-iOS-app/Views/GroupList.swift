@@ -3,11 +3,28 @@ import SwiftUI
 struct GroupList: View {
   @EnvironmentObject var dataset: Dataset
   var body: some View {
-    let result = dataset.groups.flatMap { try? $0.get() } ?? [LCGroup]()
+    let eventDictionary = dataset.events.flatMap {
+      (try? $0.get()).map {
+        [String: [LCEvent]](grouping: $0, by: { $0.group })
+      }?.mapValues { events in
+        min(events.map { $0.date }.max()?.timeIntervalSinceNow ?? -Double.greatestFiniteMagnitude, 0)
+      }
+    }
+
+    let defaultValue = eventDictionary == nil ? 0 : -Double.greatestFiniteMagnitude
+
+    let result = dataset.groups.flatMap { try? $0.get() }.map {
+      groups in
+      groups.map {
+        LCRankedGroup(group: $0, rank: eventDictionary?[$0.id] ?? defaultValue)
+      }.sorted {
+        $0.rank > $1.rank
+      }
+    } ?? [LCRankedGroup]()
 
     return List(result) { group in
       NavigationLink(destination:
-        GroupItemView(group: group).navigationBarTitle(group.name)) {
+        GroupItemView(group: group.group).navigationBarTitle(group.group.name)) {
         GroupRowView(group: group)
       }
     }

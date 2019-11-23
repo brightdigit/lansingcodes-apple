@@ -22,6 +22,7 @@
 		B372B8612355168C006D430A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B372B8602355168C006D430A /* Preview Assets.xcassets */; };
 		B372B8642355168C006D430A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B372B8622355168C006D430A /* LaunchScreen.storyboard */; };
 		B3775B50237D9A6600C53C06 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3775B4F237D9A6600C53C06 /* HTMLView.swift */; };
+		B3A949B023888DAD003BE636 /* LCRankedGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */; };
 		B3BA53FA237CDE58003CBB59 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53F9237CDE58003CBB59 /* GroupList.swift */; };
 		B3BA53FC237CDF40003CBB59 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */; };
 		B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */; };
@@ -60,6 +61,7 @@
 		B372B8632355168C006D430A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B372B8652355168C006D430A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3775B4F237D9A6600C53C06 /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
+		B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCRankedGroup.swift; sourceTree = "<group>"; };
 		B3BA53F9237CDE58003CBB59 /* GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				B3C998CE237CD3D30035D453 /* LCGroup.swift */,
 				B35AA12C237DB0EA0010783F /* LCEvent.swift */,
 				B330FF7F2382E4E1000938DC /* LCSponsor.swift */,
+				B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				B3C998D3237CD3D30035D453 /* NoDataError.swift in Sources */,
 				B3C998D6237CD3D30035D453 /* Datastore.swift in Sources */,
 				B372B85C23551689006D430A /* ContentView.swift in Sources */,
+				B3A949B023888DAD003BE636 /* LCRankedGroup.swift in Sources */,
 				B330FF802382E4E1000938DC /* LCSponsor.swift in Sources */,
 				B3C998C2237CD23C0035D453 /* MockDatastore.swift in Sources */,
 				B3BA53FA237CDE58003CBB59 /* GroupList.swift in Sources */,
@@ -546,7 +550,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "lansingcodes-iOS-app/LansingCodes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"lansingcodes-iOS-app/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_PREVIEWS = YES;
@@ -569,7 +573,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "lansingcodes-iOS-app/LansingCodes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"lansingcodes-iOS-app/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_PREVIEWS = YES;

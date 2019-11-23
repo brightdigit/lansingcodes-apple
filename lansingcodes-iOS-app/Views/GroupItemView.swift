@@ -19,12 +19,12 @@ struct GroupItemView: View {
   var link: some View {
     Button(action: {
       UIApplication.shared.open(self.group.url)
-    }) {
+    }, label: {
       HStack {
         image(basedOnURL: group.url)
         Text("Meets every \(group.schedule)")
       }
-    }
+    })
   }
 
   func image(basedOnURL url: URL) -> some View {
@@ -71,6 +71,6 @@ struct GroupItemView_Previews: PreviewProvider {
     It's easy to spin your wheels pounding at the keyboard, but a focus on <em>process</em> will make you orders of magnitude more effective.
     """, schedule: "Every 6th Friday", icon: .image("fab.js-square"))
     return NavigationView { GroupItemView(group: group).navigationBarTitle(group.name)
-    }.environmentObject(Dataset(db: MockDatastore(groups: [group], events: [LCEvent]()))).environment(\.colorScheme, .dark)
+    }.environmentObject(Dataset(store: MockDatastore(groups: [group], events: [LCEvent]()))).environment(\.colorScheme, .dark)
   }
 }

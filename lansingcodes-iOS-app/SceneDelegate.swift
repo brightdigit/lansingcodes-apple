@@ -12,8 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     FirebaseApp.configure()
 
-    let db = Firestore.firestore()
-    let dataset = Dataset(db: db, queue: DispatchQueue.main)
+    let store = Firestore.firestore()
+    let dataset = Dataset(store: store, queue: DispatchQueue.main)
 
     // Create the SwiftUI view that provides the window contents.
     let contentView = ContentView().environmentObject(dataset)

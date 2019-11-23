@@ -1,5 +1,3 @@
-
-
 extension Result {
   init(_ data: Success?, withError error: Failure?, defaultError: Failure) {
     if let data = data {

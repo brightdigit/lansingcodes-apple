@@ -2,16 +2,16 @@ import Combine
 import Firebase
 
 class Dataset: ObservableObject {
-  let db: Datastore
+  let store: Datastore
   let queue: DispatchQueue?
   @Published var groups: Result<[LCGroup], Error>?
   @Published var events: Result<[LCEvent], Error>?
   @Published var sponsors: Result<[LCSponsor], Error>?
 
-  init(db: Datastore, queue: DispatchQueue? = nil) {
-    self.db = db
+  init(store: Datastore, queue: DispatchQueue? = nil) {
+    self.store = store
     self.queue = queue
-    db.query(LCGroup.self) { groups in
+    store.query(LCGroup.self) { groups in
       if let queue = queue {
         queue.async {
           self.groups = groups
@@ -20,7 +20,7 @@ class Dataset: ObservableObject {
         self.groups = groups
       }
     }
-    db.query(LCEvent.self) { events in
+    store.query(LCEvent.self) { events in
       if let queue = queue {
         queue.async {
           self.events = events
@@ -29,7 +29,7 @@ class Dataset: ObservableObject {
         self.events = events
       }
     }
-    db.query(LCSponsor.self) { events in
+    store.query(LCSponsor.self) { events in
       if let queue = queue {
         queue.async {
           self.sponsors = events

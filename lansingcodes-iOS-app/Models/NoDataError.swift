@@ -1,3 +1,1 @@
-
-
 struct NoDataError: Error {}

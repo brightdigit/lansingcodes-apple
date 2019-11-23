@@ -6,7 +6,14 @@ struct GroupRowView: View {
     HStack {
       icon.frame(width: 42, height: nil, alignment: .leading)
       Text(group.group.name)
-    }.opacity(1.0)
+    }.opacity(opacity(basedOnRank: group.rank))
+  }
+
+  func opacity(basedOnRank rank: Double) -> Double {
+    guard rank < -60 * 60 * 24 * 365.25 / 2 else {
+      return 1.0
+    }
+    return 0.5
   }
 
   var icon: some View {

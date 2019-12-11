@@ -13,22 +13,23 @@ struct AboutView: View {
   @State var sheetDestination: SheetDestination?
 
   var body: some View {
-    VStack {
-      Spacer()
-      Button(action: {
-        self.sheetDestination = SheetDestination(url: URL(string: "https://lansing.codes")!, name: "Lansing Codes WebSite")
-      }) {
-        VStack {
-          Image("Logo").resizable().scaledToFit().frame(minHeight: 40.0, maxHeight: 80.0)
-          Text("LANSING CODES").font(.title)
-          VStack(alignment: .center) {
-            Text("Events and resources for Lansing coders")
-
-            Divider()
-            Text("For those who code or aspire to, professionally or as a hobby").font(.caption).multilineTextAlignment(.center)
-          }
+    let extractedExpr: Button<VStack<TupleView<(some View, Text, VStack<TupleView<(Text, Divider, some View)>>)>>> = Button(action: {
+      self.sheetDestination = SheetDestination(url: URL(string: "https://lansing.codes")!, name: "Lansing Codes WebSite")
+    }) {
+      VStack {
+        Image("Logo").resizable().scaledToFit().frame(minHeight: 40.0, maxHeight: 80.0)
+        Text("LANSING CODES").font(.title)
+        VStack(alignment: .center) {
+          Text("Events and resources for Lansing coders")
+          
+          Divider()
+          Text("For those who code or aspire to, professionally or as a hobby").font(.caption).multilineTextAlignment(.center)
         }
       }
+    }
+    VStack {
+      Spacer()
+      extractedExpr
 
       Spacer(minLength: 4)
       VStack {
@@ -49,9 +50,9 @@ struct AboutView: View {
       }
       Spacer()
     }
-    /*.actionSheet(item: $sheetDestination, content: {
-      ActionSheet(title: "Hello")
-    })*/
+    /* .actionSheet(item: $sheetDestination, content: {
+       ActionSheet(title: "Hello")
+     }) */
   }
 }
 

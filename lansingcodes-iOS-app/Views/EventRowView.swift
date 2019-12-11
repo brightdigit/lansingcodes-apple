@@ -16,7 +16,7 @@ struct EventRowView: View {
       }
       return name
     }.map {
-      Image($0).renderingMode(.template)
+      Image($0).renderingMode(.template).resizable().scaledToFit().frame(height: 12.0)
     }
   }
 
@@ -27,7 +27,7 @@ struct EventRowView: View {
       }
       return string
     }.map {
-      Text($0).font(.system(size: 24, weight: .black))
+      Text($0).font(.system(size: 10.0, weight: .black))
     }
   }
 
@@ -44,7 +44,8 @@ struct EventRowView: View {
       HStack {
         icon
         Text(group.name)
-      }.frame(height: 10.0)
+          .font(.caption)
+      }.frame(height: 12.0)
     }
   }
 

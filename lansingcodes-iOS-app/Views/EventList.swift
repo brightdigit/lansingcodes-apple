@@ -22,6 +22,17 @@ struct EventList: View {
     }
   }
 
+  var groups: Result<[String: LCGroup], Error>? {
+    dataset.groups.map {
+      result in
+      result.map {
+        [String: [LCGroup]](grouping: $0, by: {
+          $0.id
+        }).compactMapValues { $0.first }
+      }
+    }
+  }
+
   var body: some View {
     ZStack {
       list
@@ -33,8 +44,23 @@ struct EventList: View {
   var list: some View {
     let events = self.events.flatMap { try? $0.get() } ?? [LCEvent]()
     return List(events) { event in
-      EventRowView(event: event)
+      NavigationLink(destination: EventItemView(event: event, group: self.groupFor(event, true))) {
+        EventRowView(event: event, group: self.groupFor(event))
+      }
     }
+  }
+
+  func groupFor(_ event: LCEvent, _ always: Bool = false) -> LCGroup? {
+    guard groupId == nil || always else {
+      return nil
+    }
+    guard let result = self.groups else {
+      return nil
+    }
+    guard let groups = try? result.get() else {
+      return nil
+    }
+    return groups[event.group]
   }
 
   var busy: some View {
@@ -52,6 +78,9 @@ struct EventList: View {
 
 struct EventList_Previews: PreviewProvider {
   static var previews: some View {
+    let groups = [
+      LCGroup(id: "meetups", name: "Meetups", url: URL(string: "https://google.com")!, description: "test", schedule: "every sunday", icon: .image("fas.coffee"))
+    ]
     let events = [
       LCEvent(
         id: UUID().uuidString,

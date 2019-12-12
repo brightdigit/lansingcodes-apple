@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32CA6A723A1C51B00EEE9B3 /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CA6A623A1C51B00EEE9B3 /* EventItemView.swift */; };
+		B32CA6A923A1D01000EEE9B3 /* LCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CA6A823A1D01000EEE9B3 /* LCLocation.swift */; };
 		B330FF7A2382E2BD000938DC /* SponsorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF792382E2BD000938DC /* SponsorList.swift */; };
 		B330FF7C2382E3D1000938DC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF7B2382E3D1000938DC /* AboutView.swift */; };
 		B330FF7E2382E46F000938DC /* SponsorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF7D2382E46F000938DC /* SponsorRowView.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lansingcodes_iOS_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FD4858CC0ADE8DC675D377 /* Pods-lansingcodes-iOS-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.debug.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.debug.xcconfig"; sourceTree = "<group>"; };
+		B32CA6A623A1C51B00EEE9B3 /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
+		B32CA6A823A1D01000EEE9B3 /* LCLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCLocation.swift; sourceTree = "<group>"; };
 		B330FF792382E2BD000938DC /* SponsorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorList.swift; sourceTree = "<group>"; };
 		B330FF7B2382E3D1000938DC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		B330FF7D2382E46F000938DC /* SponsorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorRowView.swift; sourceTree = "<group>"; };
@@ -95,16 +99,17 @@
 		B339C0FB237B981700574717 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B372B85B23551689006D430A /* ContentView.swift */,
-				B339C0FC237B981700574717 /* GroupRowView.swift */,
-				B3BA53F9237CDE58003CBB59 /* GroupList.swift */,
+				B330FF7B2382E3D1000938DC /* AboutView.swift */,
 				B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */,
-				B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */,
-				B3775B4F237D9A6600C53C06 /* HTMLView.swift */,
+				B372B85B23551689006D430A /* ContentView.swift */,
+				B32CA6A623A1C51B00EEE9B3 /* EventItemView.swift */,
 				B35AA12A237DB0D10010783F /* EventList.swift */,
 				B3FD7A22237DCDC100416F8A /* EventRowView.swift */,
+				B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */,
+				B3BA53F9237CDE58003CBB59 /* GroupList.swift */,
+				B339C0FC237B981700574717 /* GroupRowView.swift */,
+				B3775B4F237D9A6600C53C06 /* HTMLView.swift */,
 				B330FF792382E2BD000938DC /* SponsorList.swift */,
-				B330FF7B2382E3D1000938DC /* AboutView.swift */,
 				B330FF7D2382E46F000938DC /* SponsorRowView.swift */,
 			);
 			path = Views;
@@ -192,6 +197,7 @@
 				B35AA12C237DB0EA0010783F /* LCEvent.swift */,
 				B330FF7F2382E4E1000938DC /* LCSponsor.swift */,
 				B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */,
+				B32CA6A823A1D01000EEE9B3 /* LCLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,7 +331,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#find \"${SRCROOT}\" -name \"*.speculid\" -print0 |\n#while IFS= read -r -d $'\\0' line; do\n#echo $line\n#speculid --process \"$line\" \n#done\n";
+			shellScript = "find \"${SRCROOT}\" -name \"*.speculid\" -print0 |\nwhile IFS= read -r -d $'\\0' line; do\necho $line\nspeculid --process \"$line\" || true\ndone\n";
 		};
 		B3BA53FF237CE366003CBB59 /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -398,6 +404,7 @@
 				B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */,
 				B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */,
 				B35AA12B237DB0D10010783F /* EventList.swift in Sources */,
+				B32CA6A923A1D01000EEE9B3 /* LCLocation.swift in Sources */,
 				B339C0FD237B981700574717 /* GroupRowView.swift in Sources */,
 				B3C998D2237CD3D30035D453 /* MissingDocumentFieldError.swift in Sources */,
 				B3C998D4237CD3D30035D453 /* TryConvert.swift in Sources */,
@@ -411,6 +418,7 @@
 				B3A949B023888DAD003BE636 /* LCRankedGroup.swift in Sources */,
 				B330FF802382E4E1000938DC /* LCSponsor.swift in Sources */,
 				B3C998C2237CD23C0035D453 /* MockDatastore.swift in Sources */,
+				B32CA6A723A1C51B00EEE9B3 /* EventItemView.swift in Sources */,
 				B3BA53FA237CDE58003CBB59 /* GroupList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,7 +558,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "lansingcodes-iOS-app/LansingCodes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"lansingcodes-iOS-app/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_PREVIEWS = YES;
@@ -573,7 +581,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "lansingcodes-iOS-app/LansingCodes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"lansingcodes-iOS-app/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_PREVIEWS = YES;

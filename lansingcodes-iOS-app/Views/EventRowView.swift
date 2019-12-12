@@ -16,7 +16,7 @@ struct EventRowView: View {
       }
       return name
     }.map {
-      Image($0).renderingMode(.template).resizable().scaledToFit().frame(height: 12.0)
+      Image($0).renderingMode(.template).resizable().scaledToFit()
     }
   }
 
@@ -27,7 +27,7 @@ struct EventRowView: View {
       }
       return string
     }.map {
-      Text($0).font(.system(size: 10.0, weight: .black))
+      Text($0).font(.system(size: 16.0, weight: .black))
     }
   }
 
@@ -45,14 +45,15 @@ struct EventRowView: View {
         icon
         Text(group.name)
           .font(.caption)
-      }.frame(height: 12.0)
+      }.padding(.bottom, -8.0)
     }
   }
 
   var body: some View {
     VStack(alignment: .leading) {
-      groupView
-      Text(self.event.name).fontWeight(.bold).lineLimit(1)
+      groupView.frame(minWidth: 0, idealWidth: nil, maxWidth: .infinity, minHeight: 8.0, idealHeight: nil, maxHeight: 12.0, alignment: .leading)
+
+      Text(self.event.name).fontWeight(.bold).lineLimit(1).allowsTightening(true)
 
       HStack {
         Text("\(self.event.date, formatter: Self.taskDateFormat)").font(.caption).lineLimit(1)
@@ -75,6 +76,6 @@ struct EventRowView_Previews: PreviewProvider {
       group: "meetups"
     )
 
-    return EventRowView(event: event, group: LCGroup(id: "meetups", name: "Meetups", url: URL(string: "https://google.com")!, description: "test", schedule: "every sunday", icon: .image("fas.coffee"))).previewLayout(PreviewLayout.fixed(width: 300, height: 50))
+    return EventRowView(event: event, group: LCGroup(id: "meetups", name: "Meetups", url: URL(string: "https://google.com")!, description: "test", schedule: "every sunday", icon: .image("fas.coffee"))).previewLayout(PreviewLayout.fixed(width: 300, height: 60))
   }
 }

@@ -44,12 +44,14 @@ struct EventList: View {
   var list: some View {
     let events = self.events.flatMap { try? $0.get() } ?? [LCEvent]()
     return List(events) { event in
-      EventRowView(event: event, group: self.groupFor(event))
+      NavigationLink(destination: EventItemView(event: event, group: self.groupFor(event, true))) {
+        EventRowView(event: event, group: self.groupFor(event))
+      }
     }
   }
 
-  func groupFor(_ event: LCEvent) -> LCGroup? {
-    guard groupId == nil else {
+  func groupFor(_ event: LCEvent, _ always: Bool = false) -> LCGroup? {
+    guard groupId == nil || always else {
       return nil
     }
     guard let result = self.groups else {

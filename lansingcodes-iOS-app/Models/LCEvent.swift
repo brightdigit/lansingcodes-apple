@@ -1,10 +1,6 @@
+import CoreLocation
 import Firebase
 import Foundation
-
-struct LCLocation {
-  let venue: String
-  let address: String
-}
 
 struct LCEvent: DataModel, Identifiable {
   static let queryName: String = "events"
@@ -54,7 +50,7 @@ struct LCEvent: DataModel, Identifiable {
     }
     let location: LCLocation?
     if let venue = document.data()["venue"] as? String, let address = document.data()["address"] as? String {
-      location = LCLocation(venue: venue, address: address)
+      location = LCLocation(venue: venue, address: address, placemark: nil)
     } else {
       location = nil
     }
@@ -64,5 +60,17 @@ struct LCEvent: DataModel, Identifiable {
     self.group = group
     date = Date(timeIntervalSince1970: startTime / 1000)
     self.location = location
+  }
+
+  init(event: LCEvent, withGeocodingResult geocodingResult: Result<CLPlacemark, Error>) {
+    id = event.id
+    location = event.location.map {
+      LCLocation(venue: $0.venue, address: $0.address, placemark: geocodingResult)
+    }
+    description = event.description
+    name = event.name
+    date = event.date
+    url = event.url
+    group = event.group
   }
 }

@@ -42,15 +42,56 @@ struct EventItemView: View {
     return formatter
   }()
 
+  var iconImage: some View {
+    return self.group?.icon.flatMap { icon in
+      guard case let .image(name) = icon else {
+        return nil
+      }
+      return name
+    }.map {
+      Image($0).renderingMode(.template).resizable().scaledToFit()
+    }
+  }
+
+  var iconText: some View {
+    return self.group?.icon.flatMap { (icon) -> String? in
+      guard case let .text(string) = icon else {
+        return nil
+      }
+      return string
+    }.map {
+      Text($0).font(.system(size: 16.0, weight: .black))
+    }
+  }
+
+  var icon: some View {
+    ZStack {
+      iconImage
+      iconText
+    }
+  }
+
+  var groupView: some View {
+    self.group.map {
+      group in
+      HStack {
+        icon
+        Text(group.name)
+          .font(.caption)
+      }.padding(.bottom, -8.0)
+    }
+  }
+
   var body: some View {
     VStack(alignment: .leading) {
       VStack(alignment: .leading) {
-        Text(group?.name ?? event.group)
-        Text("\(self.event.date, formatter: Self.taskDateFormat)")
+        groupView.frame(minWidth: 0, idealWidth: nil, maxWidth: .infinity, minHeight: 8.0, idealHeight: nil, maxHeight: 12.0, alignment: .leading)
+        Text("\(self.event.date, formatter: Self.taskDateFormat)").font(.caption)
         Text(event.description)
+        link
       }.padding(EdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0))
       Spacer()
-      MapView(landmarks: [LandmarkAnnotation]())
+      // MapView(landmarks: [LandmarkAnnotation]())
     }.navigationBarTitle(event.name)
   }
 

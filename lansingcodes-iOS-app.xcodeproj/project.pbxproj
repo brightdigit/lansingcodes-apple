@@ -396,7 +396,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DIFF=$(tar cvf - \"${SRCROOT}/lansingcodes-iOS-app/Assets.xcassets\" | shasum | diff \"${SRCROOT}/assets.sha\"\n) \nif [ \"$DIFF\" == \"\" ] \nthen\n    exit \nfi\nfind \"${SRCROOT}\" -name \"*.speculid\" -print0 |\nwhile IFS= read -r -d $'\\0' line; do\necho $line\nspeculid --process \"$line\" || true\ndone\ntar cvf - \"${SRCROOT}/lansingcodes-iOS-app/Assets.xcassets\" | shasum > assets.sha\n";
+			shellScript = "DIFF=$(tar cvf - \"${SRCROOT}/lansingcodes-iOS-app/Assets.xcassets\" | shasum | diff \"${SRCROOT}/assets.sha\" -\n) \nif [ \"$DIFF\" == \"\" ] \nthen\n    exit \nfi\nfind \"${SRCROOT}\" -name \"*.speculid\" -print0 |\nwhile IFS= read -r -d $'\\0' line; do\nspeculid --process \"$line\"\ndone\n# tar cvf - \"${SRCROOT}/lansingcodes-iOS-app/Assets.xcassets\" | shasum > assets.sha\n";
 		};
 		B3BA53FF237CE366003CBB59 /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;

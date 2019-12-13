@@ -42,6 +42,12 @@ struct EventItemView: View {
     return formatter
   }()
 
+  static let titleDateFormat: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMM d"
+    return formatter
+  }()
+
   var iconImage: some View {
     return self.group?.icon.flatMap { icon in
       guard case let .image(name) = icon else {
@@ -82,17 +88,26 @@ struct EventItemView: View {
     }
   }
 
+  var title: String {
+    if let group = self.group {
+      return "\(group.name) - \(Self.titleDateFormat.string(from: event.date))"
+    } else {
+      return event.name
+    }
+  }
+
   var body: some View {
     VStack(alignment: .leading) {
       VStack(alignment: .leading) {
         groupView.frame(minWidth: 0, idealWidth: nil, maxWidth: .infinity, minHeight: 8.0, idealHeight: nil, maxHeight: 12.0, alignment: .leading)
+        Text(event.name).font(.title)
         Text("\(self.event.date, formatter: Self.taskDateFormat)").font(.caption)
         Text(event.description)
         link
       }.padding(EdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0))
       Spacer()
       // MapView(landmarks: [LandmarkAnnotation]())
-    }.navigationBarTitle(event.name)
+    }.navigationBarTitle(title)
   }
 
   func image(basedOnURL url: URL) -> some View {

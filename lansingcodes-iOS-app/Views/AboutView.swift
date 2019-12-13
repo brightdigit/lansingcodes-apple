@@ -59,7 +59,7 @@ struct AboutView: View {
       VStack {
         Text("Submit Your Feedback or Contribute to the App").font(.caption).multilineTextAlignment(.center)
         Image("fab.github").renderingMode(.template).resizable().scaledToFit().frame(minHeight: 30.0, maxHeight: 60.0)
-        Text("Version: 1.0-beta.5 (5)").font(.caption).foregroundColor(.gray)
+        Text("Version: 1.0 (6)").font(.caption).foregroundColor(.gray)
       }
     }
   }

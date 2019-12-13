@@ -30,9 +30,18 @@ class LansingCodesUITestsScreenShots: XCTestCase {
         app.launch()
 
         // Use recording to get started writing UI tests.
+      
+      let tabBarsQuery = app.tabBars
+      tabBarsQuery.buttons["Groups"].tap()
+      snapshot("@Groups")
+      
+      let tablesQuery = app.tables
+      tablesQuery/*@START_MENU_TOKEN@*/.buttons["Demo Night"]/*[[".cells.buttons[\"Demo Night\"]",".buttons[\"Demo Night\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+      snapshot("@Group")
+      tabBarsQuery.buttons["Events"].tap()
+      snapshot("@Events")
+      
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-      snapshot("@Launch")
-      snapshot("@Groups", timeWaitingForIdle: 5000)
     }
 
     func testLaunchPerformance() {

@@ -1,0 +1,29 @@
+{
+  "device_frame_version": "latest",
+  "default": {
+    "padding": 50,
+    "show_complete_frame": false,
+    "stack_title" : false,
+    "title_below_image": true
+  },
+  "data": [
+    {
+      "filter": "Events",
+      "title": {
+        "text": "See the latest events"
+      }
+    },
+    {
+      "filter": "Groups",
+      "title": {
+        "text": "See all the groups"
+      }
+    },
+    {
+      "filter": "Group",
+      "title": {
+        "text": "See each group's detail"
+      }
+    }
+  ]
+}

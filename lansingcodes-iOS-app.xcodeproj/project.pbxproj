@@ -24,6 +24,8 @@
 		B372B8612355168C006D430A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B372B8602355168C006D430A /* Preview Assets.xcassets */; };
 		B372B8642355168C006D430A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B372B8622355168C006D430A /* LaunchScreen.storyboard */; };
 		B3775B50237D9A6600C53C06 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3775B4F237D9A6600C53C06 /* HTMLView.swift */; };
+		B377A23A23A2E76E00C665DC /* LansingCodesUITestsScreenShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377A23923A2E76E00C665DC /* LansingCodesUITestsScreenShots.swift */; };
+		B377A24223A2E7B400C665DC /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377A24123A2E7B400C665DC /* SnapshotHelper.swift */; };
 		B3A949B023888DAD003BE636 /* LCRankedGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */; };
 		B3BA53FA237CDE58003CBB59 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53F9237CDE58003CBB59 /* GroupList.swift */; };
 		B3BA53FC237CDF40003CBB59 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */; };
@@ -41,6 +43,16 @@
 		B3FD7A23237DCDC100416F8A /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD7A22237DCDC100416F8A /* EventRowView.swift */; };
 		B6D408223E87A3219097F1F1 /* Pods_lansingcodes_iOS_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B377A23C23A2E76E00C665DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B372B84C23551689006D430A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B372B85323551689006D430A;
+			remoteInfo = "lansingcodes-iOS-app";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lansingcodes_iOS_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +77,10 @@
 		B372B8632355168C006D430A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B372B8652355168C006D430A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3775B4F237D9A6600C53C06 /* HTMLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLView.swift; sourceTree = "<group>"; };
+		B377A23723A2E76E00C665DC /* LansingCodesUITestsScreenShots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LansingCodesUITestsScreenShots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B377A23923A2E76E00C665DC /* LansingCodesUITestsScreenShots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LansingCodesUITestsScreenShots.swift; sourceTree = "<group>"; };
+		B377A23B23A2E76E00C665DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B377A24123A2E7B400C665DC /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCRankedGroup.swift; sourceTree = "<group>"; };
 		B3BA53F9237CDE58003CBB59 /* GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -90,6 +106,13 @@
 			files = (
 				B36EA507237E308700A91126 /* MapKit.framework in Frameworks */,
 				B6D408223E87A3219097F1F1 /* Pods_lansingcodes_iOS_app.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B377A23423A2E76E00C665DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B372B85623551689006D430A /* lansingcodes-iOS-app */,
+				B377A23823A2E76E00C665DC /* LansingCodesUITestsScreenShots */,
 				B372B85523551689006D430A /* Products */,
 				EC96ECC50A47BC9634A7DF32 /* Pods */,
 				C4C1494478CB1B384D5A9719 /* Frameworks */,
@@ -129,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				B372B85423551689006D430A /* LansingCodes.app */,
+				B377A23723A2E76E00C665DC /* LansingCodesUITestsScreenShots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,6 +184,16 @@
 				B372B8602355168C006D430A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B377A23823A2E76E00C665DC /* LansingCodesUITestsScreenShots */ = {
+			isa = PBXGroup;
+			children = (
+				B377A24123A2E7B400C665DC /* SnapshotHelper.swift */,
+				B377A23923A2E76E00C665DC /* LansingCodesUITestsScreenShots.swift */,
+				B377A23B23A2E76E00C665DC /* Info.plist */,
+			);
+			path = LansingCodesUITestsScreenShots;
 			sourceTree = "<group>";
 		};
 		B3C998C0237CD2250035D453 /* Controllers */ = {
@@ -245,18 +280,40 @@
 			productReference = B372B85423551689006D430A /* LansingCodes.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B377A23623A2E76E00C665DC /* LansingCodesUITestsScreenShots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B377A24023A2E76E00C665DC /* Build configuration list for PBXNativeTarget "LansingCodesUITestsScreenShots" */;
+			buildPhases = (
+				B377A23323A2E76E00C665DC /* Sources */,
+				B377A23423A2E76E00C665DC /* Frameworks */,
+				B377A23523A2E76E00C665DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B377A23D23A2E76E00C665DC /* PBXTargetDependency */,
+			);
+			name = LansingCodesUITestsScreenShots;
+			productName = LansingCodesUITestsScreenShots;
+			productReference = B377A23723A2E76E00C665DC /* LansingCodesUITestsScreenShots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B372B84C23551689006D430A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = BrightDigit;
 				TargetAttributes = {
 					B372B85323551689006D430A = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					B377A23623A2E76E00C665DC = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = B372B85323551689006D430A;
 					};
 				};
 			};
@@ -274,6 +331,7 @@
 			projectRoot = "";
 			targets = (
 				B372B85323551689006D430A /* lansingcodes-iOS-app */,
+				B377A23623A2E76E00C665DC /* LansingCodesUITestsScreenShots */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +345,13 @@
 				B372B8612355168C006D430A /* Preview Assets.xcassets in Resources */,
 				B372B85E2355168C006D430A /* Assets.xcassets in Resources */,
 				B3D7A016235550690069AB03 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B377A23523A2E76E00C665DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +396,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "find \"${SRCROOT}\" -name \"*.speculid\" -print0 |\nwhile IFS= read -r -d $'\\0' line; do\necho $line\nspeculid --process \"$line\" || true\ndone\n";
+			shellScript = "DIFF=$(tar cvf - \"${SRCROOT}/lansingcodes-iOS-app/Assets.xcassets\" | shasum | diff \"${SRCROOT}/assets.sha\"\n) \nif [ \"$DIFF\" == \"\" ] \nthen\n    exit \nfi\nfind \"${SRCROOT}\" -name \"*.speculid\" -print0 |\nwhile IFS= read -r -d $'\\0' line; do\necho $line\nspeculid --process \"$line\" || true\ndone\ntar cvf - \"${SRCROOT}/lansingcodes-iOS-app/Assets.xcassets\" | shasum > assets.sha\n";
 		};
 		B3BA53FF237CE366003CBB59 /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -423,7 +488,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B377A23323A2E76E00C665DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B377A23A23A2E76E00C665DC /* LansingCodesUITestsScreenShots.swift in Sources */,
+				B377A24223A2E7B400C665DC /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B377A23D23A2E76E00C665DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B372B85323551689006D430A /* lansingcodes-iOS-app */;
+			targetProxy = B377A23C23A2E76E00C665DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B372B8622355168C006D430A /* LaunchScreen.storyboard */ = {
@@ -597,6 +679,46 @@
 			};
 			name = Release;
 		};
+		B377A23E23A2E76E00C665DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				INFOPLIST_FILE = LansingCodesUITestsScreenShots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.lansingcodes-iOS-uitests-screenshots.LansingCodesUITestsScreenShots";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "lansingcodes-iOS-app";
+			};
+			name = Debug;
+		};
+		B377A23F23A2E76E00C665DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MLT7M394S7;
+				INFOPLIST_FILE = LansingCodesUITestsScreenShots/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brightdigit.lansingcodes-iOS-uitests-screenshots.LansingCodesUITestsScreenShots";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "lansingcodes-iOS-app";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -614,6 +736,15 @@
 			buildConfigurations = (
 				B372B8692355168C006D430A /* Debug */,
 				B372B86A2355168C006D430A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B377A24023A2E76E00C665DC /* Build configuration list for PBXNativeTarget "LansingCodesUITestsScreenShots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B377A23E23A2E76E00C665DC /* Debug */,
+				B377A23F23A2E76E00C665DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

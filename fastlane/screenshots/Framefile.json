@@ -1,0 +1,47 @@
+{
+  "device_frame_version": "latest",
+  "default": {
+    "keyword": {
+      "font": "./fonts/Montserrat/Montserrat-Bold.ttf"
+    },
+    "title": {
+      "font": "./fonts/Montserrat/Montserrat-Regular.ttf",
+      "color": "#EEEEEE"
+    },
+    "background": "./background.jpg",
+    "padding": 100,
+    "stack_title" : true
+  },
+  "data": [
+    {
+      "filter": "Events",
+      "keyword": {
+        "text": "Events and Resources",
+      "color": "#FFD44E"
+      },
+      "title": {
+        "text": "for Lansing coders"
+      }
+    },
+    {
+      "filter": "Groups",
+      "keyword": {
+        "text": "Regular Meetups",
+      "color": "#FFA27A"
+      },
+      "title": {
+        "text": "to help you become a better coder"
+      }
+    },
+    {
+      "filter": "Single",
+      "keyword": {
+        "text": "Detailed Group",
+      "color": "#FFD44E"
+      },
+      "title": {
+        "text": "information to stay up-to-date"
+      }
+    }
+  ]
+}

@@ -33,11 +33,11 @@ class LansingCodesUITestsScreenShots: XCTestCase {
       
       let tabBarsQuery = app.tabBars
       tabBarsQuery.buttons["Groups"].tap()
-      snapshot("@Groups")
+      snapshot("@All-Groups")
       
       let tablesQuery = app.tables
       tablesQuery/*@START_MENU_TOKEN@*/.buttons["Demo Night"]/*[[".cells.buttons[\"Demo Night\"]",".buttons[\"Demo Night\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
-      snapshot("@Group")
+      snapshot("@Single-Group")
       tabBarsQuery.buttons["Events"].tap()
       snapshot("@Events")
       

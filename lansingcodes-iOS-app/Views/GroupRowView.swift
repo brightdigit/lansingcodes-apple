@@ -4,6 +4,7 @@ struct GroupRowView: View {
   let group: LCRankedGroup
   var body: some View {
     HStack {
+      Image(systemName: "star.fill")
       icon.frame(width: 42, height: nil, alignment: .leading)
       Text(group.group.name)
     }.opacity(opacity(basedOnRank: group.rank))
@@ -60,7 +61,8 @@ struct GroupRowView_Previews: PreviewProvider {
                 description: "Super Web",
                 schedule: "Every 6th Friday",
                 icon: .image("mfizz.script")),
-                    rank: 10.0),
+                    rank: 10.0,
+                    isFavorite: true),
 
       LCRankedGroup(group:
         LCGroup(id: "2",
@@ -69,7 +71,8 @@ struct GroupRowView_Previews: PreviewProvider {
                 description: "Super Web",
                 schedule: "Every 6th Friday",
                 icon: .text("mf")),
-                    rank: 10.0)
+                    rank: 10.0,
+                    isFavorite: true)
     ], content: row)
   }
 }

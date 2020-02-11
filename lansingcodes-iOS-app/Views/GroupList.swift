@@ -16,7 +16,7 @@ struct GroupList: View {
     let result = dataset.groups.flatMap { try? $0.get() }.map {
       groups in
       groups.map {
-        LCRankedGroup(group: $0, rank: eventDictionary?[$0.id] ?? defaultValue)
+        LCRankedGroup(group: $0, rank: eventDictionary?[$0.id] ?? defaultValue, isFavorite: dataset.favorites.contains($0.id))
       }.sorted {
         $0.rank > $1.rank
       }

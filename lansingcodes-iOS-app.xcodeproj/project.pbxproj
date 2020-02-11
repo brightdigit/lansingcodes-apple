@@ -15,6 +15,7 @@
 		B330FF7E2382E46F000938DC /* SponsorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF7D2382E46F000938DC /* SponsorRowView.swift */; };
 		B330FF802382E4E1000938DC /* LCSponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF7F2382E4E1000938DC /* LCSponsor.swift */; };
 		B339C0FD237B981700574717 /* GroupRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339C0FC237B981700574717 /* GroupRowView.swift */; };
+		B3450BB923F2EE0400DDF741 /* FavoriteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3450BB823F2EE0400DDF741 /* FavoriteCollection.swift */; };
 		B35AA12B237DB0D10010783F /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12A237DB0D10010783F /* EventList.swift */; };
 		B35AA12D237DB0EA0010783F /* LCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12C237DB0EA0010783F /* LCEvent.swift */; };
 		B36EA507237E308700A91126 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36EA506237E308700A91126 /* MapKit.framework */; };
@@ -66,6 +67,7 @@
 		B330FF7D2382E46F000938DC /* SponsorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorRowView.swift; sourceTree = "<group>"; };
 		B330FF7F2382E4E1000938DC /* LCSponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSponsor.swift; sourceTree = "<group>"; };
 		B339C0FC237B981700574717 /* GroupRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupRowView.swift; sourceTree = "<group>"; };
+		B3450BB823F2EE0400DDF741 /* FavoriteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollection.swift; sourceTree = "<group>"; };
 		B35AA12A237DB0D10010783F /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		B35AA12C237DB0EA0010783F /* LCEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEvent.swift; sourceTree = "<group>"; };
 		B36EA506237E308700A91126 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C998C9237CD3D30035D453 /* Datastore.swift */,
+				B3450BB823F2EE0400DDF741 /* FavoriteCollection.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				B3BA53FC237CDF40003CBB59 /* ActivityIndicator.swift in Sources */,
 				B330FF7A2382E2BD000938DC /* SponsorList.swift in Sources */,
 				B372B85A23551689006D430A /* SceneDelegate.swift in Sources */,
+				B3450BB923F2EE0400DDF741 /* FavoriteCollection.swift in Sources */,
 				B3C998D8237CD3D30035D453 /* LCIcon.swift in Sources */,
 				B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */,
 				B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */,

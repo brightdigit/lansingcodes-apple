@@ -133,5 +133,6 @@ iOSInjectionProject/
 # End of https://www.gitignore.io/api/xcode,swift,macos
 
 GoogleService-Info.plist
+GoogleService-Staging-Info.plist
 **/Assets.xcassets/**/*.png
 **/Assets.xcassets/**/*.pdf

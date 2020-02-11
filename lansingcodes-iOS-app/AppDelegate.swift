@@ -3,50 +3,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  /*
-   {
-     apiKey: "AIzaSyBukJRUN9wfHFnZc_fjBRRHNsLSCTxqhGQ",
-     authDomain: "lansing-codes-staging.firebaseapp.com",
-     databaseURL: "https://lansing-codes-staging.firebaseio.com",
-     projectId: "lansing-codes-staging",
-     storageBucket: "lansing-codes-staging.appspot.com",
-     messagingSenderId: "36794992743",
-     appId: "1:36794992743:web:2350879a650f171e"
-   }
-   */
-
   func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
-//
-//
-//    db.collection("groups").getDocuments() { (querySnapshot, err) in
-//        if let err = err {
-//            print("Error getting documents: \(err)")
-//        } else {
-//            for document in querySnapshot!.documents {
-//
-//                print("\(document.documentID) => \(document.data())")
-//            }
-//        }
-//    }
-//    db.collection("events").getDocuments() { (querySnapshot, err) in
-//           if let err = err {
-//               print("Error getting documents: \(err)")
-//           } else {
-//               for document in querySnapshot!.documents {
-//                   print("\(document.documentID) => \(document.data())")
-//               }
-//           }
-//       }
-//    db.collection("sponsors").getDocuments() { (querySnapshot, err) in
-//        if let err = err {
-//            print("Error getting documents: \(err)")
-//        } else {
-//            for document in querySnapshot!.documents {
-//                print("\(document.documentID) => \(document.data())")
-//            }
-//        }
-//    }
     return true
   }
 

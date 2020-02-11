@@ -10,7 +10,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-    FirebaseApp.configure()
+    let options: FirebaseOptions?
+    #if DEBUG
+      if let url = Bundle.main.url(forResource: "GoogleService-Staging-Info", withExtension: "plist") {
+        options = FirebaseOptions(contentsOfFile: url.path)
+      } else {
+        options = nil
+      }
+    #endif
+
+    if let firebaseOptions = options {
+      FirebaseApp.configure(options: firebaseOptions)
+    } else {
+      FirebaseApp.configure()
+    }
 
     let store = Firestore.firestore()
     let dataset = Dataset(store: store, queue: DispatchQueue.main)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30AED2323F2DEEA00B8BDE5 /* GoogleService-Staging-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B30AED2223F2DEEA00B8BDE5 /* GoogleService-Staging-Info.plist */; };
 		B32CA6A723A1C51B00EEE9B3 /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CA6A623A1C51B00EEE9B3 /* EventItemView.swift */; };
 		B32CA6A923A1D01000EEE9B3 /* LCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CA6A823A1D01000EEE9B3 /* LCLocation.swift */; };
 		B330FF7A2382E2BD000938DC /* SponsorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF792382E2BD000938DC /* SponsorList.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lansingcodes_iOS_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FD4858CC0ADE8DC675D377 /* Pods-lansingcodes-iOS-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.debug.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.debug.xcconfig"; sourceTree = "<group>"; };
+		B30AED2223F2DEEA00B8BDE5 /* GoogleService-Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Staging-Info.plist"; sourceTree = "<group>"; };
 		B32CA6A623A1C51B00EEE9B3 /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
 		B32CA6A823A1D01000EEE9B3 /* LCLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCLocation.swift; sourceTree = "<group>"; };
 		B330FF792382E2BD000938DC /* SponsorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorList.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				B372B85923551689006D430A /* SceneDelegate.swift */,
 				B372B85D2355168C006D430A /* Assets.xcassets */,
 				B372B8622355168C006D430A /* LaunchScreen.storyboard */,
+				B30AED2223F2DEEA00B8BDE5 /* GoogleService-Staging-Info.plist */,
 				B3D7A015235550690069AB03 /* GoogleService-Info.plist */,
 				B372B8652355168C006D430A /* Info.plist */,
 				B372B85F2355168C006D430A /* Preview Content */,
@@ -344,6 +347,7 @@
 				B372B8642355168C006D430A /* LaunchScreen.storyboard in Resources */,
 				B372B8612355168C006D430A /* Preview Assets.xcassets in Resources */,
 				B372B85E2355168C006D430A /* Assets.xcassets in Resources */,
+				B30AED2323F2DEEA00B8BDE5 /* GoogleService-Staging-Info.plist in Resources */,
 				B3D7A016235550690069AB03 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,7 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DIFF=$(tar cvf - \"${SRCROOT}/lansingcodes-iOS-app/Assets.xcassets\" | shasum | diff \"${SRCROOT}/assets.sha\" -\n) \nif [ \"$DIFF\" == \"\" ] \nthen\n    exit \nfi\nfind \"${SRCROOT}\" -name \"*.speculid\" -print0 |\nwhile IFS= read -r -d $'\\0' line; do\nspeculid --process \"$line\"\ndone\n# tar cvf - \"${SRCROOT}/lansingcodes-iOS-app/Assets.xcassets\" | shasum > assets.sha\n";
+			shellScript = "speculid --process \"${SRCROOT}\"\n";
 		};
 		B3BA53FF237CE366003CBB59 /* swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -640,7 +644,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "lansingcodes-iOS-app/LansingCodes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"lansingcodes-iOS-app/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_PREVIEWS = YES;
@@ -663,7 +667,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "lansingcodes-iOS-app/LansingCodes.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"lansingcodes-iOS-app/Preview Content\"";
 				DEVELOPMENT_TEAM = MLT7M394S7;
 				ENABLE_PREVIEWS = YES;

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B30AED2323F2DEEA00B8BDE5 /* GoogleService-Staging-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B30AED2223F2DEEA00B8BDE5 /* GoogleService-Staging-Info.plist */; };
+		B30AED2523F2F61F00B8BDE5 /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AED2423F2F61F00B8BDE5 /* Geocoder.swift */; };
+		B30AED2723F2F69C00B8BDE5 /* UDCachedGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AED2623F2F69C00B8BDE5 /* UDCachedGeocoder.swift */; };
+		B30AED2923F2F6E400B8BDE5 /* UDFavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AED2823F2F6E400B8BDE5 /* UDFavoritesStore.swift */; };
+		B30AED2B23F2F72F00B8BDE5 /* CachedGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30AED2A23F2F72F00B8BDE5 /* CachedGeocoder.swift */; };
 		B32CA6A723A1C51B00EEE9B3 /* EventItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CA6A623A1C51B00EEE9B3 /* EventItemView.swift */; };
 		B32CA6A923A1D01000EEE9B3 /* LCLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32CA6A823A1D01000EEE9B3 /* LCLocation.swift */; };
 		B330FF7A2382E2BD000938DC /* SponsorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF792382E2BD000938DC /* SponsorList.swift */; };
@@ -15,7 +19,7 @@
 		B330FF7E2382E46F000938DC /* SponsorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF7D2382E46F000938DC /* SponsorRowView.swift */; };
 		B330FF802382E4E1000938DC /* LCSponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF7F2382E4E1000938DC /* LCSponsor.swift */; };
 		B339C0FD237B981700574717 /* GroupRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339C0FC237B981700574717 /* GroupRowView.swift */; };
-		B3450BB923F2EE0400DDF741 /* FavoriteCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3450BB823F2EE0400DDF741 /* FavoriteCollection.swift */; };
+		B3450BB923F2EE0400DDF741 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3450BB823F2EE0400DDF741 /* FavoritesStore.swift */; };
 		B35AA12B237DB0D10010783F /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12A237DB0D10010783F /* EventList.swift */; };
 		B35AA12D237DB0EA0010783F /* LCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12C237DB0EA0010783F /* LCEvent.swift */; };
 		B36EA507237E308700A91126 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36EA506237E308700A91126 /* MapKit.framework */; };
@@ -60,6 +64,10 @@
 		30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_lansingcodes_iOS_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FD4858CC0ADE8DC675D377 /* Pods-lansingcodes-iOS-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.debug.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.debug.xcconfig"; sourceTree = "<group>"; };
 		B30AED2223F2DEEA00B8BDE5 /* GoogleService-Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Staging-Info.plist"; sourceTree = "<group>"; };
+		B30AED2423F2F61F00B8BDE5 /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
+		B30AED2623F2F69C00B8BDE5 /* UDCachedGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDCachedGeocoder.swift; sourceTree = "<group>"; };
+		B30AED2823F2F6E400B8BDE5 /* UDFavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDFavoritesStore.swift; sourceTree = "<group>"; };
+		B30AED2A23F2F72F00B8BDE5 /* CachedGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedGeocoder.swift; sourceTree = "<group>"; };
 		B32CA6A623A1C51B00EEE9B3 /* EventItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemView.swift; sourceTree = "<group>"; };
 		B32CA6A823A1D01000EEE9B3 /* LCLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCLocation.swift; sourceTree = "<group>"; };
 		B330FF792382E2BD000938DC /* SponsorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorList.swift; sourceTree = "<group>"; };
@@ -67,7 +75,7 @@
 		B330FF7D2382E46F000938DC /* SponsorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorRowView.swift; sourceTree = "<group>"; };
 		B330FF7F2382E4E1000938DC /* LCSponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSponsor.swift; sourceTree = "<group>"; };
 		B339C0FC237B981700574717 /* GroupRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupRowView.swift; sourceTree = "<group>"; };
-		B3450BB823F2EE0400DDF741 /* FavoriteCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollection.swift; sourceTree = "<group>"; };
+		B3450BB823F2EE0400DDF741 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
 		B35AA12A237DB0D10010783F /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		B35AA12C237DB0EA0010783F /* LCEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEvent.swift; sourceTree = "<group>"; };
 		B36EA506237E308700A91126 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -207,6 +215,8 @@
 				B3C998C6237CD3D30035D453 /* TryConvert.swift */,
 				B3C998C1237CD23C0035D453 /* MockDatastore.swift */,
 				B3F60EC3235691C1001A1148 /* Dataset.swift */,
+				B30AED2623F2F69C00B8BDE5 /* UDCachedGeocoder.swift */,
+				B30AED2823F2F6E400B8BDE5 /* UDFavoritesStore.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,7 +225,9 @@
 			isa = PBXGroup;
 			children = (
 				B3C998C9237CD3D30035D453 /* Datastore.swift */,
-				B3450BB823F2EE0400DDF741 /* FavoriteCollection.swift */,
+				B3450BB823F2EE0400DDF741 /* FavoritesStore.swift */,
+				B30AED2423F2F61F00B8BDE5 /* Geocoder.swift */,
+				B30AED2A23F2F72F00B8BDE5 /* CachedGeocoder.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -469,15 +481,18 @@
 				B330FF7E2382E46F000938DC /* SponsorRowView.swift in Sources */,
 				B35AA12D237DB0EA0010783F /* LCEvent.swift in Sources */,
 				B330FF7C2382E3D1000938DC /* AboutView.swift in Sources */,
+				B30AED2923F2F6E400B8BDE5 /* UDFavoritesStore.swift in Sources */,
 				B3BA53FC237CDF40003CBB59 /* ActivityIndicator.swift in Sources */,
 				B330FF7A2382E2BD000938DC /* SponsorList.swift in Sources */,
 				B372B85A23551689006D430A /* SceneDelegate.swift in Sources */,
-				B3450BB923F2EE0400DDF741 /* FavoriteCollection.swift in Sources */,
+				B3450BB923F2EE0400DDF741 /* FavoritesStore.swift in Sources */,
 				B3C998D8237CD3D30035D453 /* LCIcon.swift in Sources */,
 				B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */,
+				B30AED2523F2F61F00B8BDE5 /* Geocoder.swift in Sources */,
 				B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */,
 				B35AA12B237DB0D10010783F /* EventList.swift in Sources */,
 				B32CA6A923A1D01000EEE9B3 /* LCLocation.swift in Sources */,
+				B30AED2B23F2F72F00B8BDE5 /* CachedGeocoder.swift in Sources */,
 				B339C0FD237B981700574717 /* GroupRowView.swift in Sources */,
 				B3C998D2237CD3D30035D453 /* MissingDocumentFieldError.swift in Sources */,
 				B3C998D4237CD3D30035D453 /* TryConvert.swift in Sources */,
@@ -485,6 +500,7 @@
 				B3775B50237D9A6600C53C06 /* HTMLView.swift in Sources */,
 				B3C998D9237CD3D30035D453 /* LCGroup.swift in Sources */,
 				B3FD7A23237DCDC100416F8A /* EventRowView.swift in Sources */,
+				B30AED2723F2F69C00B8BDE5 /* UDCachedGeocoder.swift in Sources */,
 				B3C998D3237CD3D30035D453 /* NoDataError.swift in Sources */,
 				B3C998D6237CD3D30035D453 /* Datastore.swift in Sources */,
 				B372B85C23551689006D430A /* ContentView.swift in Sources */,

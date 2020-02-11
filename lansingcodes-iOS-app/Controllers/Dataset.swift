@@ -5,12 +5,23 @@ import Firebase
 class Dataset: ObservableObject {
   let store: Datastore
 
+  let favoritesStore: FavoritesStore
+  let geocoder: CachedGeocoder
   let queue: DispatchQueue?
   @Published var favorites = [LCGroup.ID]()
   // let geocoder = CLGeocoder()
 
   @Published var groups: Result<[LCGroup], Error>?
-  @Published var events: Result<[LCEvent], Error>?
+  @Published var events: Result<[LCEvent], Error>? {
+    didSet {
+      guard let addresses = self.events.flatMap({ try? $0.get() }).map({ $0.compactMap { $0.location?.address } }) else {
+        return
+      }
+
+      geocoder.queue(addressStrings: addresses)
+    }
+  }
+
 //    {
 //    didSet {
 //      if let events = self.events.flatMap({
@@ -70,8 +81,10 @@ class Dataset: ObservableObject {
 
   @Published var sponsors: Result<[LCSponsor], Error>?
 
-  init(store: Datastore, queue: DispatchQueue? = nil) {
+  init(store: Datastore, favoritesStore: FavoritesStore? = nil, geocoder: CachedGeocoder? = nil, queue: DispatchQueue? = nil) {
     self.store = store
+    self.favoritesStore = favoritesStore!
+    self.geocoder = geocoder!
     self.queue = queue
     store.query(LCGroup.self) { groups in
       if let queue = queue {

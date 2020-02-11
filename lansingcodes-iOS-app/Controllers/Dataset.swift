@@ -8,7 +8,9 @@ class Dataset: ObservableObject {
   let favoritesStore: FavoritesStore
   let geocoder: CachedGeocoder
   let queue: DispatchQueue?
+  let defaults: UserDefaults
   @Published var favorites = [LCGroup.ID]()
+
   // let geocoder = CLGeocoder()
 
   @Published var groups: Result<[LCGroup], Error>?
@@ -81,10 +83,11 @@ class Dataset: ObservableObject {
 
   @Published var sponsors: Result<[LCSponsor], Error>?
 
-  init(store: Datastore, favoritesStore: FavoritesStore? = nil, geocoder: CachedGeocoder? = nil, queue: DispatchQueue? = nil) {
+  init(store: Datastore, defaults: UserDefaults = UserDefaults.standard, favoritesStore: FavoritesStore? = nil, geocoder: CachedGeocoder? = nil, queue: DispatchQueue? = nil) {
+    self.defaults = defaults
     self.store = store
-    self.favoritesStore = favoritesStore!
-    self.geocoder = geocoder!
+    self.favoritesStore = favoritesStore ?? UDFavoritesStore(defaults: defaults)
+    self.geocoder = geocoder ?? UDCachedGeocoder(defaults: defaults)
     self.queue = queue
     store.query(LCGroup.self) { groups in
       if let queue = queue {

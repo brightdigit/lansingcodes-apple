@@ -1,3 +1,5 @@
 import Foundation
 
-public protocol FavoritesStore {}
+public protocol FavoritesStore {
+  func toggle(_ groupId: LCGroup.ID)
+}

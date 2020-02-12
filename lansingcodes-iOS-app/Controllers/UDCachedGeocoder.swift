@@ -32,6 +32,8 @@ public struct UDCachedGeocoder: CachedGeocoder {
       self.geocoder.geocodeAddressString(addressString) { result in
         if let coordinate = try? result.get() {
           dictionary[addressString] = coordinate.asDictionary()
+          self.defaults.set(dictionary, forKey: "coordinates")
+          debugPrint(dictionary)
         }
       }
     }

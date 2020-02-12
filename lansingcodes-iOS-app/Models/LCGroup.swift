@@ -1,12 +1,12 @@
 import Firebase
 import Foundation
 
-struct LCGroup: Identifiable, DataModel {
+public struct LCGroup: Identifiable, DataModel {
   static var queryName: String {
     return "groups"
   }
 
-  let id: String
+  public let id: String
   let name: String
   let url: URL
   let description: String

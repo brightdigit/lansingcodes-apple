@@ -1,10 +1,14 @@
 import SwiftUI
 
 struct GroupRowView: View {
+  @EnvironmentObject var dataset: Dataset
   let group: LCUserGroup
+
   var body: some View {
     HStack {
-      Image(systemName: "star.fill")
+      Image(systemName: group.isFavorite ? "star.fill" : "star").onTapGesture {
+        self.dataset.favoritesStore.toggle(self.group.id)
+      }
       icon.frame(width: 42, height: nil, alignment: .leading)
       Text(group.group.name)
     }.opacity(opacity(basedOnRank: group.rank))

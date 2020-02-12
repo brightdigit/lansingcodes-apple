@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GroupRowView: View {
-  let group: LCRankedGroup
+  let group: LCUserGroup
   var body: some View {
     HStack {
       Image(systemName: "star.fill")
@@ -48,31 +48,31 @@ struct GroupRowView: View {
 }
 
 struct GroupRowView_Previews: PreviewProvider {
-  static func row(forGroup group: LCRankedGroup) -> some View {
+  static func row(forGroup group: LCUserGroup) -> some View {
     GroupRowView(group: group).previewLayout(PreviewLayout.fixed(width: 300, height: 50))
   }
 
   static var previews: some View {
     ForEach([
-      LCRankedGroup(group:
+      LCUserGroup(group:
         LCGroup(id: "1",
                 name: "Web",
                 url: URL(string: "https://www.google.com/")!,
                 description: "Super Web",
                 schedule: "Every 6th Friday",
                 icon: .image("mfizz.script")),
-                    rank: 10.0,
-                    isFavorite: true),
+                  rank: 10.0,
+                  isFavorite: true),
 
-      LCRankedGroup(group:
+      LCUserGroup(group:
         LCGroup(id: "2",
                 name: "Web",
                 url: URL(string: "https://www.google.com/")!,
                 description: "Super Web",
                 schedule: "Every 6th Friday",
                 icon: .text("mf")),
-                    rank: 10.0,
-                    isFavorite: true)
+                  rank: 10.0,
+                  isFavorite: true)
     ], content: row)
   }
 }

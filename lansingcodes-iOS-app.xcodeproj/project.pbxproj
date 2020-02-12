@@ -20,6 +20,8 @@
 		B330FF802382E4E1000938DC /* LCSponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B330FF7F2382E4E1000938DC /* LCSponsor.swift */; };
 		B339C0FD237B981700574717 /* GroupRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339C0FC237B981700574717 /* GroupRowView.swift */; };
 		B3450BB923F2EE0400DDF741 /* FavoritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3450BB823F2EE0400DDF741 /* FavoritesStore.swift */; };
+		B3450BBB23F3477C00DDF741 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3450BBA23F3477C00DDF741 /* Dataset.swift */; };
+		B3450BBD23F348EF00DDF741 /* LCGeocodedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3450BBC23F348EF00DDF741 /* LCGeocodedEvent.swift */; };
 		B35AA12B237DB0D10010783F /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12A237DB0D10010783F /* EventList.swift */; };
 		B35AA12D237DB0EA0010783F /* LCEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35AA12C237DB0EA0010783F /* LCEvent.swift */; };
 		B36EA507237E308700A91126 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B36EA506237E308700A91126 /* MapKit.framework */; };
@@ -32,7 +34,7 @@
 		B3775B50237D9A6600C53C06 /* HTMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3775B4F237D9A6600C53C06 /* HTMLView.swift */; };
 		B377A23A23A2E76E00C665DC /* LansingCodesUITestsScreenShots.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377A23923A2E76E00C665DC /* LansingCodesUITestsScreenShots.swift */; };
 		B377A24223A2E7B400C665DC /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377A24123A2E7B400C665DC /* SnapshotHelper.swift */; };
-		B3A949B023888DAD003BE636 /* LCRankedGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */; };
+		B3A949B023888DAD003BE636 /* LCUserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A949AF23888DAD003BE636 /* LCUserGroup.swift */; };
 		B3BA53FA237CDE58003CBB59 /* GroupList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53F9237CDE58003CBB59 /* GroupList.swift */; };
 		B3BA53FC237CDF40003CBB59 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */; };
 		B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */; };
@@ -45,7 +47,7 @@
 		B3C998D8237CD3D30035D453 /* LCIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C998CD237CD3D30035D453 /* LCIcon.swift */; };
 		B3C998D9237CD3D30035D453 /* LCGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C998CE237CD3D30035D453 /* LCGroup.swift */; };
 		B3D7A016235550690069AB03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B3D7A015235550690069AB03 /* GoogleService-Info.plist */; };
-		B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F60EC3235691C1001A1148 /* Dataset.swift */; };
+		B3F60EC4235691C1001A1148 /* LCDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F60EC3235691C1001A1148 /* LCDataObject.swift */; };
 		B3FD7A23237DCDC100416F8A /* EventRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FD7A22237DCDC100416F8A /* EventRowView.swift */; };
 		B6D408223E87A3219097F1F1 /* Pods_lansingcodes_iOS_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A599F9A0BEF80F33A9A1B4 /* Pods_lansingcodes_iOS_app.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		B330FF7F2382E4E1000938DC /* LCSponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCSponsor.swift; sourceTree = "<group>"; };
 		B339C0FC237B981700574717 /* GroupRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupRowView.swift; sourceTree = "<group>"; };
 		B3450BB823F2EE0400DDF741 /* FavoritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesStore.swift; sourceTree = "<group>"; };
+		B3450BBA23F3477C00DDF741 /* Dataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		B3450BBC23F348EF00DDF741 /* LCGeocodedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCGeocodedEvent.swift; sourceTree = "<group>"; };
 		B35AA12A237DB0D10010783F /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
 		B35AA12C237DB0EA0010783F /* LCEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCEvent.swift; sourceTree = "<group>"; };
 		B36EA506237E308700A91126 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -93,7 +97,7 @@
 		B377A23923A2E76E00C665DC /* LansingCodesUITestsScreenShots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LansingCodesUITestsScreenShots.swift; sourceTree = "<group>"; };
 		B377A23B23A2E76E00C665DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B377A24123A2E7B400C665DC /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
-		B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCRankedGroup.swift; sourceTree = "<group>"; };
+		B3A949AF23888DAD003BE636 /* LCUserGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCUserGroup.swift; sourceTree = "<group>"; };
 		B3BA53F9237CDE58003CBB59 /* GroupList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupList.swift; sourceTree = "<group>"; };
 		B3BA53FB237CDF40003CBB59 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		B3BA53FD237CE2A8003CBB59 /* GroupItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupItemView.swift; sourceTree = "<group>"; };
@@ -106,7 +110,7 @@
 		B3C998CD237CD3D30035D453 /* LCIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCIcon.swift; sourceTree = "<group>"; };
 		B3C998CE237CD3D30035D453 /* LCGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCGroup.swift; sourceTree = "<group>"; };
 		B3D7A015235550690069AB03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B3F60EC3235691C1001A1148 /* Dataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		B3F60EC3235691C1001A1148 /* LCDataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDataObject.swift; sourceTree = "<group>"; };
 		B3FD7A22237DCDC100416F8A /* EventRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRowView.swift; sourceTree = "<group>"; };
 		D112AB34B77665CE178C403A /* Pods-lansingcodes-iOS-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lansingcodes-iOS-app.release.xcconfig"; path = "Target Support Files/Pods-lansingcodes-iOS-app/Pods-lansingcodes-iOS-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,9 +218,10 @@
 			children = (
 				B3C998C6237CD3D30035D453 /* TryConvert.swift */,
 				B3C998C1237CD23C0035D453 /* MockDatastore.swift */,
-				B3F60EC3235691C1001A1148 /* Dataset.swift */,
+				B3F60EC3235691C1001A1148 /* LCDataObject.swift */,
 				B30AED2623F2F69C00B8BDE5 /* UDCachedGeocoder.swift */,
 				B30AED2823F2F6E400B8BDE5 /* UDFavoritesStore.swift */,
+				B3450BBA23F3477C00DDF741 /* Dataset.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -249,8 +254,9 @@
 				B3C998CE237CD3D30035D453 /* LCGroup.swift */,
 				B35AA12C237DB0EA0010783F /* LCEvent.swift */,
 				B330FF7F2382E4E1000938DC /* LCSponsor.swift */,
-				B3A949AF23888DAD003BE636 /* LCRankedGroup.swift */,
+				B3A949AF23888DAD003BE636 /* LCUserGroup.swift */,
 				B32CA6A823A1D01000EEE9B3 /* LCLocation.swift */,
+				B3450BBC23F348EF00DDF741 /* LCGeocodedEvent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -487,14 +493,16 @@
 				B372B85A23551689006D430A /* SceneDelegate.swift in Sources */,
 				B3450BB923F2EE0400DDF741 /* FavoritesStore.swift in Sources */,
 				B3C998D8237CD3D30035D453 /* LCIcon.swift in Sources */,
-				B3F60EC4235691C1001A1148 /* Dataset.swift in Sources */,
+				B3F60EC4235691C1001A1148 /* LCDataObject.swift in Sources */,
 				B30AED2523F2F61F00B8BDE5 /* Geocoder.swift in Sources */,
 				B3BA53FE237CE2A8003CBB59 /* GroupItemView.swift in Sources */,
 				B35AA12B237DB0D10010783F /* EventList.swift in Sources */,
 				B32CA6A923A1D01000EEE9B3 /* LCLocation.swift in Sources */,
 				B30AED2B23F2F72F00B8BDE5 /* CachedGeocoder.swift in Sources */,
 				B339C0FD237B981700574717 /* GroupRowView.swift in Sources */,
+				B3450BBD23F348EF00DDF741 /* LCGeocodedEvent.swift in Sources */,
 				B3C998D2237CD3D30035D453 /* MissingDocumentFieldError.swift in Sources */,
+				B3450BBB23F3477C00DDF741 /* Dataset.swift in Sources */,
 				B3C998D4237CD3D30035D453 /* TryConvert.swift in Sources */,
 				B3C998D7237CD3D30035D453 /* Result.swift in Sources */,
 				B3775B50237D9A6600C53C06 /* HTMLView.swift in Sources */,
@@ -504,7 +512,7 @@
 				B3C998D3237CD3D30035D453 /* NoDataError.swift in Sources */,
 				B3C998D6237CD3D30035D453 /* Datastore.swift in Sources */,
 				B372B85C23551689006D430A /* ContentView.swift in Sources */,
-				B3A949B023888DAD003BE636 /* LCRankedGroup.swift in Sources */,
+				B3A949B023888DAD003BE636 /* LCUserGroup.swift in Sources */,
 				B330FF802382E4E1000938DC /* LCSponsor.swift in Sources */,
 				B3C998C2237CD23C0035D453 /* MockDatastore.swift in Sources */,
 				B32CA6A723A1C51B00EEE9B3 /* EventItemView.swift in Sources */,

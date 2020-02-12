@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-  @EnvironmentObject var dataset: Dataset
+  @EnvironmentObject var dataset: LCDataObject
   var body: some View {
     TabView {
       NavigationView {
@@ -72,6 +72,6 @@ struct ContentView_Previews: PreviewProvider {
     ]
     let data = MockDatastore(groups: groups, events: [LCEvent]())
 
-    return ContentView().environmentObject(Dataset(store: data))
+    return ContentView().environmentObject(LCDataObject(store: data))
   }
 }

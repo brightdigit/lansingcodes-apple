@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     let store = Firestore.firestore()
-    let dataset = Dataset(store: store, queue: DispatchQueue.main)
+    let dataset = LCDataObject(store: store, queue: DispatchQueue.main)
 
     // Create the SwiftUI view that provides the window contents.
     let contentView = ContentView().environmentObject(dataset)

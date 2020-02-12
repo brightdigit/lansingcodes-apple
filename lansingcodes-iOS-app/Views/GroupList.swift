@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GroupList: View {
-  @EnvironmentObject var dataset: Dataset
+  @EnvironmentObject var dataset: LCDataObject
   var body: some View {
     let eventDictionary = dataset.events.flatMap {
       (try? $0.get()).map {
@@ -16,11 +16,11 @@ struct GroupList: View {
     let result = dataset.groups.flatMap { try? $0.get() }.map {
       groups in
       groups.map {
-        LCRankedGroup(group: $0, rank: eventDictionary?[$0.id] ?? defaultValue, isFavorite: dataset.favorites.contains($0.id))
+        LCUserGroup(group: $0, rank: eventDictionary?[$0.id] ?? defaultValue, isFavorite: false)
       }.sorted {
         $0.rank > $1.rank
       }
-    } ?? [LCRankedGroup]()
+    } ?? [LCUserGroup]()
 
     return List(result) { group in
       NavigationLink(destination:
@@ -42,6 +42,6 @@ struct GroupList_Previews: PreviewProvider {
               icon: .image("fas.coffee"))
     ]
     let data = MockDatastore(groups: groups, events: [LCEvent]())
-    return GroupList().environmentObject(Dataset(store: data))
+    return GroupList().environmentObject(LCDataObject(store: data))
   }
 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct EventList: View {
-  @EnvironmentObject var dataset: Dataset
+  @EnvironmentObject var dataset: LCDataObject
   let groupId: String?
 
   var events: Result<[LCEvent], Error>? {
@@ -100,6 +100,6 @@ struct EventList_Previews: PreviewProvider {
       )
     ]
     let mockDataset = MockDatastore(groups: [LCGroup](), events: events)
-    return EventList(groupId: nil).previewLayout(PreviewLayout.fixed(width: 300, height: 50)).environmentObject(Dataset(store: mockDataset))
+    return EventList(groupId: nil).previewLayout(PreviewLayout.fixed(width: 300, height: 50)).environmentObject(LCDataObject(store: mockDataset))
   }
 }

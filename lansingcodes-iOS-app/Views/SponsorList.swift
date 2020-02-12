@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SponsorList: View {
-  @EnvironmentObject var dataset: Dataset
+  @EnvironmentObject var dataset: LCDataObject
 
   var body: some View {
     ZStack {

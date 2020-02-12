@@ -1,6 +1,6 @@
 import Foundation
 
-struct LCRankedGroup: Identifiable {
+struct LCUserGroup: Identifiable {
   let group: LCGroup
   let rank: Double
   let isFavorite: Bool

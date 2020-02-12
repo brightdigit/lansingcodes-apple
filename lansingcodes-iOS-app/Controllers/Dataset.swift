@@ -10,6 +10,8 @@ class Dataset: ObservableObject {
   var userGroupsCancellable: AnyCancellable!
   var geoEventsCancellable: AnyCancellable!
   var sponsorsCancellable: AnyCancellable!
+  var geocoderCancellable: AnyCancellable!
+
   @Published var data: LCDataObject
   @Published var groups: Result<[LCUserGroup], Error>?
   @Published var events: Result<[LCGeocodedEvent], Error>?
@@ -22,6 +24,9 @@ class Dataset: ObservableObject {
     let eventsPublisher = self.data.$events.compactMap { $0 }
     let groupsPublisher = self.data.$groups.compactMap { $0 }
 
+    geocoderCancellable = eventsPublisher.compactMap {
+      try? $0.get().compactMap { $0.location?.address }
+    }.sink(receiveValue: geocoder.queue(addressStrings:))
     sponsorsCancellable = self.data.$sponsors.receive(on: DispatchQueue.main).assign(to: \.sponsors, on: self)
 
     let groupRanksPublisher = eventsPublisher.map { result in

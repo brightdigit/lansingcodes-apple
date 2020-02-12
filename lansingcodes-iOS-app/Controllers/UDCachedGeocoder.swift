@@ -20,11 +20,11 @@ extension CLLocationCoordinate2D {
 
 public struct UDCachedGeocoder: CachedGeocoder {
   func queue(addressString: String) {
-    guard var dictionary = defaults.dictionary(forKey: "coordinates") else {
-      return
-    }
+    var dictionary: [String: Any]
 
-    guard CLLocationCoordinate2D.fromDictionary(dictionary[addressString]) != nil else {
+    dictionary = defaults.dictionary(forKey: "coordinates") ?? [String: Any]()
+
+    guard CLLocationCoordinate2D.fromDictionary(dictionary[addressString]) == nil else {
       return
     }
 

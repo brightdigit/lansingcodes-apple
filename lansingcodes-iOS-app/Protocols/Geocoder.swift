@@ -15,6 +15,7 @@ protocol Geocoder {
 
 extension CLGeocoder: Geocoder {
   func geocodeAddressString(_ addressString: String, completionHandler: @escaping (Result<Coordinate, Error>) -> Void) {
+    debugPrint(addressString)
     geocodeAddressString(addressString) { placemarks, error in
       let result: Result<Coordinate, Error> = Result(placemarks, withError: error, defaultError: NoDataError()).flatMap { placemarks in
         if let coordinate = placemarks.first?.location?.coordinate {

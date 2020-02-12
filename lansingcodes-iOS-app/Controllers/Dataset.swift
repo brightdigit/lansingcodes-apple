@@ -24,14 +24,6 @@ class Dataset: ObservableObject {
 
     sponsorsCancellable = self.data.$sponsors.receive(on: DispatchQueue.main).assign(to: \.sponsors, on: self)
 
-//    let gePublisher = groupsPublisher.combineLatest(eventsPublisher) { (groupsResult, eventsResult) -> Result<([LCGroup], [LCEvent]), Error> in
-//      groupsResult.flatMap { (groups) -> Result<([LCGroup], [LCEvent]), Error> in
-//        eventsResult.map {
-//          (groups, $0)
-//        }
-//      }
-//    }
-
     let groupRanksPublisher = eventsPublisher.map { result in
       result.map {
         events in

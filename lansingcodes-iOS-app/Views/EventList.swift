@@ -1,17 +1,17 @@
 import SwiftUI
 
 struct EventList: View {
-  @EnvironmentObject var dataset: LCDataObject
+  @EnvironmentObject var dataset: Dataset
   let groupId: String?
 
-  var events: Result<[LCEvent], Error>? {
+  var events: Result<[LCGeocodedEvent], Error>? {
     dataset.events.map { result in
       result.map { events in
         events.filter {
-          $0.group == groupId || groupId == nil
+          $0.event.group == groupId || groupId == nil
         }.sorted { (lhs, rhs) -> Bool in
-          let lti = lhs.date.timeIntervalSinceNow
-          let rti = rhs.date.timeIntervalSinceNow
+          let lti = lhs.event.date.timeIntervalSinceNow
+          let rti = rhs.event.date.timeIntervalSinceNow
           if lti > 0, rti > 0 {
             return rti > lti
           } else {
@@ -22,11 +22,11 @@ struct EventList: View {
     }
   }
 
-  var groups: Result<[String: LCGroup], Error>? {
+  var groups: Result<[String: LCUserGroup], Error>? {
     dataset.groups.map {
       result in
       result.map {
-        [String: [LCGroup]](grouping: $0, by: {
+        [String: [LCUserGroup]](grouping: $0, by: {
           $0.id
         }).compactMapValues { $0.first }
       }
@@ -42,7 +42,7 @@ struct EventList: View {
   }
 
   var list: some View {
-    let events = self.events.flatMap { try? $0.get() } ?? [LCEvent]()
+    let events = self.events.flatMap { try? $0.get() } ?? [LCGeocodedEvent]()
     return List(events) { event in
       NavigationLink(destination: EventItemView(event: event, group: self.groupFor(event, true))) {
         EventRowView(event: event, group: self.groupFor(event))
@@ -50,7 +50,7 @@ struct EventList: View {
     }
   }
 
-  func groupFor(_ event: LCEvent, _ always: Bool = false) -> LCGroup? {
+  func groupFor(_ event: LCGeocodedEvent, _ always: Bool = false) -> LCUserGroup? {
     guard groupId == nil || always else {
       return nil
     }
@@ -60,7 +60,7 @@ struct EventList: View {
     guard let groups = try? result.get() else {
       return nil
     }
-    return groups[event.group]
+    return groups[event.event.group]
   }
 
   var busy: some View {

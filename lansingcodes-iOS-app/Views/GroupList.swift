@@ -1,26 +1,23 @@
 import SwiftUI
 
 struct GroupList: View {
-  @EnvironmentObject var dataset: LCDataObject
+  @EnvironmentObject var dataset: Dataset
   var body: some View {
-    let eventDictionary = dataset.events.flatMap {
-      (try? $0.get()).map {
-        [String: [LCEvent]](grouping: $0, by: { $0.group })
-      }?.mapValues { events in
-        min(events.map { $0.date }.max()?.timeIntervalSinceNow ?? -Double.greatestFiniteMagnitude, 0)
-      }
-    }
+//    let eventDictionary = dataset.events.flatMap {
+//      (try? $0.get()).map {
+//        [String: [LCEvent]](grouping: $0, by: { $0.group })
+//      }?.mapValues { events in
+//        min(events.map { $0.date }.max()?.timeIntervalSinceNow ?? -Double.greatestFiniteMagnitude, 0)
+//      }
+//    }
+//
+//    let defaultValue = eventDictionary == nil ? 0 : -Double.greatestFiniteMagnitude
 
-    let defaultValue = eventDictionary == nil ? 0 : -Double.greatestFiniteMagnitude
-
-    let result = dataset.groups.flatMap { try? $0.get() }.map {
-      groups in
-      groups.map {
-        LCUserGroup(group: $0, rank: eventDictionary?[$0.id] ?? defaultValue, isFavorite: false)
-      }.sorted {
-        $0.rank > $1.rank
-      }
-    } ?? [LCUserGroup]()
+//    let result = try? dataset.groups.sorted {
+//      $0.rank > $1.rank
+//      }
+//   ?? [LCUserGroup]()
+    let result = [LCUserGroup]()
 
     return List(result) { group in
       NavigationLink(destination:

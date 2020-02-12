@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-  @EnvironmentObject var dataset: LCDataObject
+  @EnvironmentObject var dataset: Dataset
   var body: some View {
     TabView {
       NavigationView {

@@ -1,4 +1,5 @@
 import SwiftUI
+import UserNotifications
 
 struct ContentView: View {
   @EnvironmentObject var dataset: Dataset
@@ -44,7 +45,11 @@ struct ContentView: View {
         Image("far.thumbs-up").renderingMode(.template)
         Text("About")
       }.tag(3)
-    }
+    }.onAppear(perform: self.notificationCheck)
+  }
+
+  func notificationCheck() {
+    dataset.requestAuthorization()
   }
 
   var busy: some View {

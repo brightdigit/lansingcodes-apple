@@ -1,3 +1,4 @@
+import Combine
 import UIKit
 
 class Dataset: ObservableObject {
@@ -6,10 +7,13 @@ class Dataset: ObservableObject {
   let queue: DispatchQueue? = nil
   let defaults: UserDefaults = UserDefaults.standard
 
+  var userGroupsCancellable: AnyCancellable!
+  var geoEventsCancellable: AnyCancellable!
+  var sponsorsCancellable: AnyCancellable!
   @Published var data: LCDataObject
-  @Published var groups: Result<[LCUserGroup], Error>? = nil
-  @Published var events: Result<[LCGeocodedEvent], Error>? = nil
-  @Published var sponsors: Result<[LCSponsor], Error>? = nil
+  @Published var groups: Result<[LCUserGroup], Error>?
+  @Published var events: Result<[LCGeocodedEvent], Error>?
+  @Published var sponsors: Result<[LCSponsor], Error>?
 
   init(data: LCDataObject) {
     self.data = data
@@ -18,14 +22,46 @@ class Dataset: ObservableObject {
     let eventsPublisher = self.data.$events.compactMap { $0 }
     let groupsPublisher = self.data.$groups.compactMap { $0 }
 
-    let gePublisher = groupsPublisher.combineLatest(eventsPublisher) { (groupsResult, eventsResult) -> Result<([LCGroup], [LCEvent]), Error> in
-      groupsResult.flatMap { (groups) -> Result<([LCGroup], [LCEvent]), Error> in
-        eventsResult.map {
-          (groups, $0)
+    sponsorsCancellable = self.data.$sponsors.receive(on: DispatchQueue.main).assign(to: \.sponsors, on: self)
+
+//    let gePublisher = groupsPublisher.combineLatest(eventsPublisher) { (groupsResult, eventsResult) -> Result<([LCGroup], [LCEvent]), Error> in
+//      groupsResult.flatMap { (groups) -> Result<([LCGroup], [LCEvent]), Error> in
+//        eventsResult.map {
+//          (groups, $0)
+//        }
+//      }
+//    }
+
+    let groupRanksPublisher = eventsPublisher.map { result in
+      result.map {
+        events in
+
+        [String: [LCEvent]](grouping: events, by: { $0.group }).mapValues {
+          events in
+          min(events.map { $0.date }.max()?.timeIntervalSinceNow ?? -Double.greatestFiniteMagnitude, 0)
         }
       }
     }
 
-    self.data.$groups.combineLatest(defaults.publisher(for: \.favorites))
+    userGroupsCancellable = groupsPublisher.combineLatest(groupRanksPublisher, defaults.publisher(for: \.favorites)) { groupsResult, ranksResult, favoritesResult in
+      let ranks = try? ranksResult.get()
+      let defaultValue = ranks == nil ? 0 : -Double.greatestFiniteMagnitude
+      return groupsResult.map {
+        $0.map {
+          LCUserGroup(group: $0, rank: ranks?[$0.id] ?? defaultValue, isFavorite: favoritesResult?.contains($0.id) ?? false)
+        }
+      }
+    }.receive(on: DispatchQueue.main).assign(to: \.groups, on: self)
+
+    geoEventsCancellable = eventsPublisher.combineLatest(defaults.publisher(for: \.coordinates)) { eventsResult, coordinates in
+      let lookup = coordinates.flatMap {
+        $0 as? [String: Coordinate]
+      }
+      return eventsResult.map {
+        $0.map {
+          LCGeocodedEvent(event: $0, coordinate: $0.location.flatMap { lookup?[$0.address] })
+        }
+      }
+    }.receive(on: DispatchQueue.main).assign(to: \.events, on: self)
   }
 }

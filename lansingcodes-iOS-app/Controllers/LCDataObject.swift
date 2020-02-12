@@ -2,6 +2,9 @@ import Combine
 import CoreLocation
 import Firebase
 
+@objc
+protocol CoordinateLookup: AnyObject {}
+
 extension UserDefaults {
   @objc dynamic var favorites: [LCGroup.ID]? {
     get {
@@ -9,6 +12,15 @@ extension UserDefaults {
     }
     set(value) {
       `set`(value, forKey: "favorites")
+    }
+  }
+
+  @objc dynamic var coordinates: CoordinateLookup? {
+    get {
+      return dictionary(forKey: "coordinates") as? CoordinateLookup
+    }
+    set(value) {
+      `set`(value, forKey: "coordinates")
     }
   }
 }

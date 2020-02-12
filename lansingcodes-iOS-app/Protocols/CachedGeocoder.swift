@@ -2,6 +2,8 @@ import Foundation
 
 protocol CachedGeocoder {
   func queue(addressString: String)
+
+  func publisher()
 }
 
 extension CachedGeocoder {

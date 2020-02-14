@@ -15,3 +15,13 @@ extension Result {
     }
   }
 }
+
+extension Result where Success == Void {
+  init(withError error: Failure?) {
+    if let error = error {
+      self = .failure(error)
+    } else {
+      self = .success(Void())
+    }
+  }
+}

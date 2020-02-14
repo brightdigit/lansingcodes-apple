@@ -45,35 +45,46 @@ class Dataset: ObservableObject {
 
     let favoritesPublisher = defaults.publisher(for: \.favorites).replaceNil(with: [LCGroup.ID]())
 
-    eventsPublisher.compactMap {
+    let requestsPublisher = eventsPublisher.compactMap {
       result -> [LCEvent]? in
       try? result.get()
     }.combineLatest(favoritesPublisher) { events, favorites in
       events.filter { favorites.contains($0.group) }
-    }.map {
-      $0.map {
-        event -> UNNotificationRequest in
-        let content = UNMutableNotificationContent()
+    }.compactMap {
+      // $0.reduce(UNMutableNotificationContent(), <#T##nextPartialResult: (Result, LCEvent) throws -> Result##(Result, LCEvent) throws -> Result#>)
+      (events) -> UNNotificationRequest? in
+      let content = UNMutableNotificationContent()
+      if let event = events.first, events.count == 1 {
         content.title = event.name
         content.body = event.description
-        content.sound = .default
-        return UNNotificationRequest(identifier: event.id, content: content, trigger: nil)
+      } else if events.count > 1 {
+        content.title = "\(events.count) New Events!"
+        content.body = events.map { $0.name }.joined(separator: "\n")
+      } else {
+        return nil
+      }
+      content.sound = .default
+      return UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: nil)
+//      $0.map {
+//        event -> UNNotificationRequest in
+//        let content = UNMutableNotificationContent()
+//        content.title = event.name
+//        content.body = event.description
+//        content.sound = .default
+//        return UNNotificationRequest(identifier: event.id, content: content, trigger: nil)
+//      }
+    }.flatMap { request in
+      Future {
+        completion in
+        self.center.add(request) { error in
+          completion(.success(error))
+        }
+      }
+    }.sink { error in
+      if let error = error {
+        debugPrint(error)
       }
     }
-//    .flatMap { requests in
-//
-//      let futures = requests.map {
-//        request in
-//        Future { completion in
-//          self.center.add(request) {
-//            completion(Result(Void, withError: $0, defaultError: NoDataError()))
-//          }
-//        }
-//      }
-//      return futures.reduce(Just(Result<Void, Error>.success {})) { result, future in
-//        result.append(future)
-//      }
-//    }
     userGroupsCancellable = groupsPublisher.combineLatest(groupRanksPublisher, favoritesPublisher) { groupsResult, ranksResult, favoritesResult in
       let ranks = try? ranksResult.get()
       let defaultValue = ranks == nil ? 0 : -Double.greatestFiniteMagnitude

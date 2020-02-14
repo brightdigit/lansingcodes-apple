@@ -1,9 +1,12 @@
+import BackgroundTasks
 import Firebase
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.brightdigit.lansingcodes-iOS-app.events", using: nil) { _ in
+    }
     return true
   }
 

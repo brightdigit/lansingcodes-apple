@@ -25,7 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       FirebaseApp.configure()
     }
 
-    let store = Firestore.firestore()
+    let store: Datastore = Firestore.firestore()
+
     let dataObject = LCDataObject(store: store, queue: DispatchQueue.main)
 
     let dataset = Dataset(data: dataObject)
